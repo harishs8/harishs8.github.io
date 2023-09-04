@@ -158,23 +158,145 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const openModalBtn = document.getElementById("openModalBtnFinance");
+//   const modal = document.getElementById("modalFinance");
+//   const closeModalBtn = document.getElementById("closeModalBtnFinance");
+
+//   openModalBtn.addEventListener("click", function () {
+//       modal.style.display = "block";
+//   });
+
+//   closeModalBtn.addEventListener("click", function () {
+//       modal.style.display = "none";
+//   });
+
+//   // Close the modal if the user clicks outside the content area
+//   window.addEventListener("click", function (event) {
+//       if (event.target == modal) {
+//           modal.style.display = "none";
+//       }
+//   });
+// });
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get references to the Orizon modal elements
+//   const openModalBtnOrizon = document.getElementById("openModalBtnOrizon");
+//   const modalOrizon = document.getElementById("modalOrizon");
+//   const closeModalBtnOrizon = document.getElementById("closeModalBtnOrizon");
+
+//   openModalBtnOrizon.addEventListener("click", function () {
+//     modalOrizon.style.display = "block";
+//   });
+
+//   closeModalBtnOrizon.addEventListener("click", function () {
+//     modalOrizon.style.display = "none";
+//   });
+
+//   // Close the modal if the user clicks outside the content area
+//   window.addEventListener("click", function (event) {
+//     if (event.target == modalOrizon) {
+//       modalOrizon.style.display = "none";
+//     }
+//   });
+// });
+
+//Combined Modals
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const openModalBtns = document.querySelectorAll(".open-modal-btn");
+//   const closeModalBtns = document.querySelectorAll(".close-modal-btn");
+//   const commonModals = document.querySelectorAll(".common-modal");
+
+//   // Function to open a modal
+//   const openModal = function (modalId) {
+//     const modal = document.getElementById(modalId);
+//     modal.style.display = "block";
+//   };
+
+//   // Function to close a modal
+//   const closeModal = function (modalId) {
+//     const modal = document.getElementById(modalId);
+//     modal.style.display = "none";
+//   };
+
+//   // Event listener for opening modals
+//   openModalBtns.forEach(function (btn) {
+//     btn.addEventListener("click", function () {
+//       const modalId = this.getAttribute("data-modal-target");
+//       openModal(modalId);
+//     });
+//   });
+
+//   // Event listener for closing modals
+//   closeModalBtns.forEach(function (btn) {
+//     btn.addEventListener("click", function () {
+//       const modalId = this.getAttribute("data-modal-target");
+//       closeModal(modalId);
+//     });
+//   });
+
+//   // Event listener to close the modal if the user clicks outside the content area
+//   window.addEventListener("click", function (event) {
+//     commonModals.forEach(function (modal) {
+//       if (event.target == modal) {
+//         modal.style.display = "none";
+//       }
+//     });
+//   });
+// });
+
+
+
+
+
+
+
+
+// Combined Modal Dialog Working Code 
+
 document.addEventListener("DOMContentLoaded", function () {
-  const openModalBtn = document.getElementById("openModalBtn");
-  const modal = document.getElementById("modal");
-  const closeModalBtn = document.getElementById("closeModalBtn");
+  const openModalBtns = document.querySelectorAll(".open-modal-btn");
+  const closeModalBtns = document.querySelectorAll(".close-modal-btn");
+  const commonModals = document.querySelectorAll(".common-modal");
 
-  openModalBtn.addEventListener("click", function () {
-      modal.style.display = "block";
+  // Function to open a modal
+  const openModal = function (modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "block";
+  };
+
+  // Function to close a modal
+  const closeModal = function (modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "none";
+  };
+
+  // Event listener for opening modals
+  openModalBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const modalId = this.getAttribute("data-modal-target");
+      openModal(modalId);
+    });
   });
 
-  closeModalBtn.addEventListener("click", function () {
-      modal.style.display = "none";
+  // Event listener for closing modals
+  closeModalBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const modalId = this.getAttribute("data-modal-target");
+      closeModal(modalId);
+    });
   });
 
-  // Close the modal if the user clicks outside the content area
+  // Event listener to close the modal if the user clicks outside the content area
   window.addEventListener("click", function (event) {
+    commonModals.forEach(function (modal) {
       if (event.target == modal) {
-          modal.style.display = "none";
+        modal.style.display = "none";
       }
+    });
   });
 });
