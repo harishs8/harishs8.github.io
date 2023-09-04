@@ -157,3 +157,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const openModalBtn = document.getElementById("openModalBtn");
+  const modal = document.getElementById("modal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  openModalBtn.addEventListener("click", function () {
+      modal.style.display = "block";
+  });
+
+  closeModalBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+  });
+
+  // Close the modal if the user clicks outside the content area
+  window.addEventListener("click", function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  });
+});

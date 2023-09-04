@@ -795,10 +795,19 @@
 
           </div>
 
+ <!-- The modal dialog container -->
+ <div id="modal" class="modal">
+  <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <img src="your-image.jpg" alt="Image" class="modal-image">
+      <p class="modal-text">Your text goes here.</p>
+  </div>
+</div>
+
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" id="openModalBtn">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
