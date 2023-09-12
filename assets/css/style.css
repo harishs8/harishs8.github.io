@@ -62,7 +62,7 @@
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
   --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
+  --white-1: #ffffff;
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
@@ -837,6 +837,8 @@ main {
 }
 
 
+
+
 /**
  * skills 
  */
@@ -1033,6 +1035,30 @@ main {
   font-weight: var(--fw-300);
 }
 
+
+/* ____________________________
+
+Bulletin 
+
+____________________________ */
+
+.por { margin-bottom: 30px; }
+.por-title { margin-bottom: 20px; color: aliceblue;font-size: 25px;}
+.por-text{
+  color: var(--light-gray);
+  list-style-type:disc;
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  padding-left: 10px;
+}
+
+
+
+.timeline-text {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
 
 
 
