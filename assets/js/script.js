@@ -16,6 +16,10 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 
+
+
+
+
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
@@ -300,3 +304,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
