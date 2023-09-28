@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harishkumaar</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/H-Logo.jpg" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+
+      <!--
+        - #blog
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title" id="blog-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p id="blog-content">
+            
+          </p>
+        </section>
+
+
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/NewProductDev.svg" alt="NPD icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">New Product Development</h4>
+
+                <p class="service-item-text">
+                  Ideation | Innovation | Collaboration | Prototyping | Testing
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/IC.svg" alt="Schematics icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Schematics Capture</h4>
+
+                <p class="service-item-text">
+                  Modularity | Component Selection | Work Flow | Review & Revision
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/PCB_Design.svg" alt="PCB Design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">PCB Design</h4>
+
+                <p class="service-item-text">
+                  Layout & Routing | High Speed | DFM | DFA | Library Management
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/Robotics.svg" alt="Robot icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Robotics</h4>
+
+                <p class="service-item-text">
+                  Motor & Sensor Selection | Power Calculation | Prototyping & Testing
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Firmware Development</h4>
+
+                <p class="service-item-text">
+                  C | C++ | C# | HAL | Python | Communication Protocols
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/Product_Management.svg" alt="Product Manager icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Product Management</h4>
+
+                <p class="service-item-text">
+                  Strategy | Roadmap | Requirements | Feature Prioritization | PLM
+                </p>
+              </div>
+
+            </li>
+
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script>
+    // Function to get the value of a query parameter from the URL
+    function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    const jsonData = {
+        "data": [
+            {
+                "key": "blog-title-here",
+                "title": "blog title here",
+                "content": `hey content I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content
+                  I will be filling the details here,please ignore the content `,
+            },
+            {
+                "key": "blog-title-here-2",
+                "title": "blog title here 2",
+                "content": "content here"
+            }
+        ]
+    };
+
+    // Function to change the content of the <p> tag based on the key
+    function changeContentByKey(key) {
+        const data = jsonData.data.find(item => item.key === key);
+        if (data) {
+            const contentElement = document.getElementById("blog-title");
+            const contentEle = document.getElementById("blog-content");
+
+            contentElement.textContent = data.title;
+            contentEle.textContent = data.content;
+
+        } else {
+            console.log("Key not found in JSON data.");
+        }
+    }
+
+    // Usage example
+    const blogValue = getQueryParameter("blog");
+    if (blogValue !== null) {
+        changeContentByKey(blogValue);
+    } else {
+        console.log("'blog' parameter not found in the URL.");
+    }
+</script>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+
+</body>
+
+</html>
