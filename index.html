@@ -1,1654 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harishkumaar</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/H-Logo.jpg" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>Simple 3D Viewer — GLTF + STL</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { --bg:#0b0d10; --ui:#0f1720; --accent:#60a5fa; --muted:#cbd5e1; }
+    html,body { height:100%; margin:0; background:var(--bg); color:var(--muted); font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;}
+    #fileInput { position: absolute; z-index: 10; top: 12px; left: 12px; }
+    #msg { position: absolute; right: 12px; bottom: 12px; background: rgba(0,0,0,0.45); padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); z-index:10; max-width:40vw; }
+    canvas { display:block; width:100vw; height:100vh; }
+    #controls { position:absolute; left:12px; top:48px; z-index:10; display:flex; gap:8px; }
+    .btn { background:var(--ui); color:#fff; border:0; padding:6px 8px; border-radius:6px; cursor:pointer; font-size:13px; }
+    .small { font-size:12px; padding:5px 7px; }
+  </style>
 </head>
-
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-
-      <!-- Original Code for Avathar  -->
-
-
-      <!-- <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Harishkumaar Moorthy" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="harishkumaar">Harishkumaar</h1>
-
-          <p class="title">Hardware Design Engineer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div> -->
-
-      <!-- Code for Transistion of Avathar  -->
-
-
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Harishkumaar Moorthy" width="80" class="avatar">
-        </figure>
-        <div class="info-content">
-          <h1 class="name" title="harishkumaar">Harishkumaar</h1>
-          <p class="title">Hardware Design Engineer</p>
-        </div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-      </div>
-
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:hk@harishkumaar.in" class="contact-link">hk@harishkumaar.in</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+31617161213" class="contact-link">+31617161213</a>
-            </div>
-
-          </li> -->
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">August 19, 1998</time>
-            </div>
-
-          </li> -->
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Delft, Netherlands</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/harishkumaarm/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/harishs8" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://drive.google.com/uc?export=download&id=1rfpG5YXFYWbWSPkgFcwJ8qfHACR6BiQ0"
-              class="social-link">
-              <ion-icon name="attach-outline"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li> -->
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm a Hardware Design Engineer and New Product Development Engineer based in Karnataka, India.
-            My career is dedicated to creating innovative solutions and pushing the boundaries of technology.
-
-          <p>
-            With years of experience in hardware design and new product development, I specialize in transforming
-            complex challenges into elegant and practical solutions.
-            I have a proven track record of designing cutting-edge hardware components and bringing innovative products
-            to market.
-
-          </p>
-          </p>
-        </section>
-
-
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/NewProductDev.svg" alt="NPD icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">New Product Development</h4>
-
-                <p class="service-item-text">
-                  Ideation | Innovation | Prototyping | Testing
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/IC.svg" alt="Schematics icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Schematics Capture</h4>
-
-                <p class="service-item-text">
-                  Component Selection | Cost Reduction | Version Control
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/PCB_Design.svg" alt="PCB Design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">PCB Design</h4>
-
-                <p class="service-item-text">
-                  Layout & Routing | High Speed | DFM | DFA | Library Management
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/Robotics.svg" alt="Robot icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Robotics</h4>
-
-                <p class="service-item-text">
-                  Motor & Sensor Selection | Power Calculation | Prototyping & Testing
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Firmware Development</h4>
-
-                <p class="service-item-text">
-                  C | C++ | C# | HAL | Python | Communication Protocols
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/Product_Management.svg" alt="Product Manager icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Product Management</h4>
-
-                <p class="service-item-text">
-                  Strategy | Roadmap | Requirements | Feature Prioritization | PLM
-                </p>
-              </div>
-
-            </li>
-
-
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <!-- <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity.
-                  We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client.
-                  Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-
-        <!-- <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-
-            <!-- Experience Section -->
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">EMotorad (Inkodop Technologies Pvt Ltd), Bangalore</h4>
-
-              <span><b>External Consultant - Hardware Development</b> </span>
-              <span>Sept 2024 - Present</span>
-
-              <span style="color: #ffffff ;"><i>Electric Two-Wheeler – 900W Off/ON Board Charger</i></span>
-              <p class="timeline-text">
-                 In - Progress
-                <br>
-                
-              </p>
-
-
-              <span><b>Engineer – Hardware Development</b> </span>
-              <span>Oct 2023 — Aug 2024</span>
-
-
-
-              <span style="color: #ffffff ;"><i>E-Bike - Smart Motor Controller Unit – 250W (Electric - Bicycle)</i></span>
-              <p class="timeline-text">
-                 Designing of complete powertrain architecture of the E-Bike (Electric Bicycle). Integrated connected feature for the MCU 
-                using Bluetooth. Power calculations, Hardware Design, Component Engineering and Vendor management. 
-                <br>
-                 Compliance Testing – AIS-004 Part – 3 
-             </p>
-
-
-              <span style="color: #ffffff ;"><i>E-Bike - Connected Display (Electric - Bicycle)</i></span>
-              <p class="timeline-text">
-                 Designed a standalone display consisting of LTE with 2G fallback and GNSS feature for trip data, location tracking and SOS.
-                <br>
-                 Coloured TFT – Non – Intelligent with touch.
-              </p>
-
-              <span style="color: #ffffff ;"><i>Electric Two-Wheeler – 48V Battery Management System</i></span>
-              <p class="timeline-text">
-                 Contributed to the Architecture and Hardware Design of 48V BMS for 2 – Wheeler system. 
-                <br>
-                 NXP based AFE and Microcontroller for NMC based batteries
-                <br>
-                 Pre-charge resistor calculation, PCB Layout with EMI / EMC compliance.
-              </p>
-
-
-              <span style="color: #ffffff ;"><i>Electric Two-Wheeler – Instrument Cluster (Body Control and Telematics Unit)</i></span>
-              <p class="timeline-text">
-                 Contributed to the Architecture and Hardware Design of stackable cluster unit with independent BCM and TCU module.
-                <br>
-                 TCU – Android System with MIPI Touch Display using Quectel Module.
-                <br>
-                 BCM – Over/Under Voltage Protection, Reverse Polarity Protection
-              </p>
-
-              <span style="color: #ffffff ;"><i>E-Bike - Intelligent Battery Management System – 36V/48V (Electric - Bicycle)</i></span>
-              <p class="timeline-text">
-                 Architecture and Hardware development of BMS compatible with 36V and 48V architecture using TI based AFE and NXP 
-                based microcontroller.
-                <br>
-                 Compatible with NMC and LFP batteries. 
-              </p>
-
-
-
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">HoloWorld (Kaaya Virtualization Private Limited), Mysuru</h4>
-
-              <span><b>Robotics Hardware Engineer & Product Manager</b> </span>
-              <span>Sept 2022 — Present</span>
-
-
-
-              <span style="color: #ffffff ;"><i>HoloSuit - B2B</i></span>
-              <p class="timeline-text">
-                 Leading the Design and development of Holosuit, encompassing both Hardware and Software.
-                The cutting-edge full-body motion capture suit is specifically designed for
-                Virtual Reality and XR
-                applications with a realistic sense of feel and touch.
-                <br>
-                 Designed the comprehensive Electronics System, encompassing integrated
-                harness solutions for
-                functional scalability, captivating aesthetics, and effortless maintenance.
-                <br>
-                 Worked with cross functional teams to ensure product success,
-                including software engineers,
-                mechanical engineers, Industrial designers, apparel designers and quality assurance team.
-              </p>
-
-
-              <span style="color: #ffffff ;"><i>Cleaning Robot (Client) - B2B</i></span>
-              <p class="timeline-text">
-                 Designed Wiring Harness for the Robot(Cobot) and Sensors - ATEX Environment
-
-              </p>
-
-              <span style="color: #ffffff ;"><i>Build Your Own Robot(BYOR) - B2C</i></span>
-              <p class="timeline-text">
-                 Designed BMS for the company's consumer product serving over 1000+ customers.
-              </p>
-
-
-              <span style="color: #ffffff ;"><i>4 - Wheeled Research Robot</i></span>
-              <p class="timeline-text">
-                 Designed and developed hardware for a four-wheeled omni-directional robot
-                with autonomous navigation
-                capabilities.
-                <br>
-                 Performed hardware selection, battery calculations and wiring harness
-                design to ensure optimal
-                performance, efficient power management, and seamless integration for all components.
-
-              </p>
-
-              <span style="color: #ffffff ;"><i>Exo - Skeleton</i></span>
-              <p class="timeline-text">
-                 Engaged in Motor Selection, power calculation,
-                control electronics integration and mounting.
-                <br>
-                 Responsible for executing wiring harness for
-                medical rehabilitation lower body exoskeletons.
-
-              </p>
-
-
-
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Mahindra & Mahindra, Automotive Division, Nashik</h4>
-              <span><b>Assistant Manager</b> </span>
-              <span>Mar 2021 — Sep 2022</span>
-
-              <span style="color: #ffffff ;"><i>Paint Shop</i></span>
-              <p class="timeline-text">
-                 Successfully developed an in-house auto colour changer, resulting in 8% reduction in solvent
-                consumption during painting.
-                <br>
-                 Experienced in handling sealer robot of FANUC, including programming and troubleshooting using Teach
-                Pendent.
-                <br>
-                 Proficient in working with painting robots such as DURR, Eco Screen 3D Onsite, KEBA Teach Pendant, and
-                Wonderware In – Touch.
-                <br>
-                 PLC Programming skills with Allen Bradley and Factory Talk HMI.
-                <br>
-                 Familiarity with sensors, IO mapping/programming, VFDs, circuit breakers, relays, protection devices,
-                and cabling.
-                <br>
-                 Communication Protocols – Ethernet TCP/IP, RS232, RS485, Control-Net, DH+.
-                <br>
-                 Implemented fail-safe Poka-Yoke mechanisms at critical areas in the Paint shop process.
-                <br>
-                 Designed SOP for the Digital Quality system.
-
-              </p>
-
-
-
-              <span><b>Graduate Engineer Trainee</b> </span>
-              <span>Mar 2021 — Feb 2022</span>
-
-              <span style="color: #ffffff ;"><i>Press Shop</i></span>
-              <p class="timeline-text">
-                 Defect elimination on body panels in the press line using OpenCV
-                <br>
-                 Conceptualized and implemented an automatic cushion pin detection system for Draw Die, using a
-                low-cost setup and PLC for identification of proper seating.
-
-
-              </p>
-
-
-              <p class="timeline-text">
-                Yet to be filled
-              </p>
-
-            </li>
-
-
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">SAEGCT Collegiate Club - GCT</h4>
-              <span><b>Electrical Subsystem Lead</b> </span>
-              <span>Dec 2017 — Apr 2020</span>
-
-
-              <p class="timeline-text">
-
-
-
-                 Led a team of four in the Electrical System department, ensuring strict
-                adherence to a challenging
-                10-month product delivery schedule and fostering relationships with 20+ sponsors.
-                <br>
-                 Utilized NI cDAQ, Arduino, a dynamometer, and leveraged MATLAB simulations
-                to gather and analyse
-                vehicle parameters.
-                <br>
-                 Implemented Data-driven design, yielding an impressive 35% reduction in
-                weight and a 25% reduction in
-                parts.
-                <br>
-                 Secured the 21st overall position and ranked 8th in the cost event,
-                competing against 100 schools
-                worldwide at BAJA SAE Arizona 2020.
-
-              </p>
-            </li>
-
-
-
-          </ol>
-
-        </section>
-
-
-        <!-- Education Section -->
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Delft University of Technology (TU Delft), The Netherlands</h4>
-              <span><b>Electrical Engineering (Masters)</b></span>
-              <span>2024 — Present</span>
-
-              <p class="timeline-text">
-
-                 Curretly Studying in TU Delft specialising in the Power Electronics and Drives and additional specialisation on the High Voltage Technology
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Government College of Technology, Coimbatore</h4>
-              <span><b>Electrical and Electronics Engineering (Bachelors)</b></span>
-              <span>2016 — 2020</span>
-
-              <p class="timeline-text">
-
-                 CGPA : 8.78/10.00
-                <br>
-                 Activities and Societies: Technical Head - EEE National Symposium
-                <br>
-                 Coordinator of Student Research Foundation
-                <br>
-                 Member of SAEGCT
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Bannari Amman Vidya Niketan, Sathyamangalam</h4>
-              <span><b>Higher Secondary Certificate (12<sup>th</sup> Grade)</b></span>
-              <span>2014 — 2016</span>
-
-              <p class="timeline-text">
-
-                 Percentage : 96.25/100.00
-                <br>
-                 Activities and Societies:
-                <br>
-                 Sports - Volleyball
-
-
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Bannari Amman Vidya Niketan, Sathyamangalam</h4>
-              <span><b>Secondary School Certificate (10<sup>th</sup> Grade)</b></span>
-              <span>2012 — 2014</span>
-
-              <p class="timeline-text">
-
-                 Percentage : 99.60/100.00
-                <br>
-                 Activities and societies: School People Leader
-                <br>
-                 Sports - Volleyball
-                <br>
-                 School Marching Band
-
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <!-- Skills Section -->
-
-        <section class="skill">
-
-          <!-- <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Schematics Capture</h5>
-
-              <p class="service-item-text">
-                Modularity | Component Selection | Work Flow | Review & Revision
-              </p>
-
-              <data value="80">80%</data>
-
-            </div>
-
-            <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-          </li>
-
-          <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">PCB Design</h5>
-                <data value="70">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">New Product Development</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Management</h5>
-                <data value="50">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-          </ul> -->
-
-
-
-          <!-- <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Schematics Capture</h5>
-
-              <p class="service-item-text">
-                Modularity | Component Selection | Work Flow | Review & Revision
-              </p>
-
-
-
-            </div>
-
-
-
-          </li>
-
-
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Schematics Capture</h5>
-
-              <p class="service-item-text">
-                Modularity | Component Selection | Work Flow | Review & Revision | Checking the length
-
-              </p>
-
-
-
-            </div>
-
-
-          </li>
-
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Schematics Capture</h5>
-
-              <p class="service-item-text">
-                Modularity | Component Selection | Work Flow | Review & Revision
-
-
-              </p>
-
-
-
-            </div>
-
-          </li> -->
-
-
-
-          <section class="por">
-
-            <h3 class="por-title">
-
-              Awards And Achievements
-
-            </h3>
-
-            <ul class="por-text">
-
-              <li class="por-text"><b style="color :#ceb15a; ">HOLOSTAR</b> - award for playing pivotal role
-                in propelling theproduct to achieve remarkable success </li>
-
-              <li class="por-text"><b style="color :#ceb15a; ">State Rank Holder (2<sup>nd</sup>)</b> -
-                Secondary School Certificate (10<sup>th</sup> Grade)</li>
-
-              <li class="por-text"><b style="color :#ceb15a; ">AIR 9<sup>th</sup></b> - BAJA SAE INDIA - 2019</li>
-
-              <li class="por-text"><b style="color :#ceb15a; ">Overall 21<sup>st</sup></b> - BAJA SAE ARIZONA - 2020
-                (International Event)</li>
-
-              <!-- <li class="por-text">Yet to be filled</li>
-
-              <li class="por-text">Yet to be filled</li>
-
-              <li class="por-text">EYty</li> -->
-
-            </ul>
-
-          </section>
-
-
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Board Design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Firmware Dev</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Product</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Board Design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Firmware Dev</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Product</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-
-
-
-          <ul class="project-list">
-            <!-- Modal dialog container for Finance
-            <div id="modalFinance" class="modal">
-               Modal content for Finance 
-              <div class="modal-content">
-                <span id="closeModalBtnFinance" class="close">&times;</span>
-                <img src="./assets/images/Holosuit/motion-capture.jpg" alt="Image" class="modal-image">
-                <p class="modal-text">I will be filling the details here, please ignore the content</p>
-              </div>
-            </div> -->
-
-            <!-- The belown is added as a Modal Dialog to showcase the Content -->
-
-
-
-
-            <!-- ********************************START1******************************** -->
-
-            <!-- Modal content for Finance -->
-
-            <!-- <div id="modalFinance" class="modal common-modal">
-              <div class="modal-content">
-                <span id="closeModalBtnFinance" class="close">&times;</span>
-                <img src="./assets/images/Holosuit/motion-capture.jpg" alt="Image" class="modal-image">
-                <p class="modal-text">I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content
-                  I will be filling the details here,please ignore the content </p>
-
-              </div>
-
-            
-            </div> -->
-
-
-            <!-- ********************************END1******************************** -->
-
-
-
-
-
-
-
-            <!-- Project Portfolio 1  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="./blog_1.html" class="open-modal-btn" data-modal-target="modalFinance">
-             
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Holosuit</h3>
-
-                <p class="project-category">Product</p>
-
-
-              </a>
-            </li> -->
-
-
-            <!-- Project Portfolio 2  -->
-            <!-- <li class="project-item active" data-filter-item data-category="board design">
-              <a href="./blog_2.html" class="open-modal-btn" data-modal-target="modalOrizon">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li> -->
-
-
-            <!-- Project Portfolio 3 -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li> -->
-
-
-            <!-- Project Portfolio 4  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li> -->
-
-
-
-            <!-- Project Portfolio 5  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li> -->
-
-
-
-            <!-- Project Portfolio 6  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li> -->
-
-
-
-
-            <!-- Project Portfolio 7  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li> -->
-
-
-
-            <!-- Project Portfolio 8  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li> -->
-
-
-
-
-            <!-- Project Portfolio 9  -->
-            <!-- <li class="project-item active" data-filter-item data-category="product">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li> -->
-
-
-
-
-
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
-  </main>
-
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-
-  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-
+<input id="fileInput" type="file" accept=".glb,.gltf,.stl" />
+<div id="controls">
+  <button id="fitBtn" class="btn small">Fit View</button>
+  <button id="resetBtn" class="btn small">Reset Camera</button>
+</div>
+<div id="msg">No model loaded — choose a .glb/.gltf/.stl file</div>
+
+<canvas id="viewer"></canvas>
+
+<script type="module">
+  import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js';
+  import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/controls/OrbitControls.js';
+  import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/GLTFLoader.js';
+  import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/DRACOLoader.js';
+  import { STLLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/STLLoader.js';
+
+  // DOM
+  const fileInput = document.getElementById('fileInput');
+  const msg = document.getElementById('msg');
+  const fitBtn = document.getElementById('fitBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const canvas = document.getElementById('viewer');
+
+  // Renderer, scene, camera
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0b0d10);
+
+  const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 10000);
+  const defaultCameraPosition = new THREE.Vector3(0, 1.6, 3);
+  camera.position.copy(defaultCameraPosition);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.target.set(0,0,0);
+
+  // Lights
+  const hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.7);
+  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+  dir.position.set(5, 10, 7.5);
+  dir.castShadow = false;
+  scene.add(hemi, dir);
+
+  // simple ground to give depth
+  const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(200, 200),
+    new THREE.MeshStandardMaterial({ color: 0x0f1113, roughness: 1, metalness: 0 })
+  );
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = -1.6;
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  // Loaders
+  const draco = new DRACOLoader();
+  draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.setDRACOLoader(draco);
+  const stlLoader = new STLLoader();
+
+  let currentModel = null;
+  let currentURL = null;
+
+  function setMessage(text, isError = false) {
+    msg.textContent = text;
+    msg.style.color = isError ? '#ffb4b4' : '';
+  }
+
+  // dispose helper
+  function disposeObject(obj) {
+    if (!obj) return;
+    obj.traverse((c) => {
+      if (c.geometry) c.geometry.dispose();
+      if (c.material) {
+        if (Array.isArray(c.material)) c.material.forEach(m => disposeMaterial(m));
+        else disposeMaterial(c.material);
+      }
+    });
+    scene.remove(obj);
+  }
+  function disposeMaterial(m) {
+    // release textures & maps
+    for (const k in m) {
+      if (m[k] && typeof m[k].dispose === 'function') {
+        try { m[k].dispose(); } catch (e) {}
+      }
+    }
+  }
+
+  // robust fit-to-view: centers, scales, moves camera back appropriately
+  function fitToView(object) {
+    if (!object) return;
+    const box = new THREE.Box3().setFromObject(object);
+    if (!box.isEmpty()) {
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+
+      // move object so center is at origin
+      object.position.x += (object.position.x - center.x);
+      object.position.y += (object.position.y - center.y);
+      object.position.z += (object.position.z - center.z);
+
+      // scale object to a reasonable size if extremely big/small
+      const maxDim = Math.max(size.x, size.y, size.z);
+      if (maxDim > 0) {
+        // scale factor so largest dimension occupies ~1.5 units
+        const desired = 1.5;
+        const scale = desired / maxDim;
+        object.scale.setScalar(scale);
+      }
+
+      // set camera distance based on bounding sphere
+      const boxSize = Math.max(size.x, size.y, size.z) * (object.scale.x || 1);
+      const fov = camera.fov * (Math.PI / 180);
+      const distance = Math.abs(boxSize) / Math.tan(fov / 2) * 0.6 + 0.5; // tuned factor
+
+      // position camera a bit up and back
+      camera.position.set(0, Math.max(0.6, boxSize * 0.6), distance);
+      controls.target.set(0, 0, 0);
+      controls.update();
+    } else {
+      // fallback: set default camera
+      camera.position.copy(defaultCameraPosition);
+      controls.target.set(0,0,0);
+      controls.update();
+    }
+  }
+
+  // load GLTF/GLB by blob URL (works with local File objects)
+  function loadGLTFFromURL(url) {
+    return new Promise((resolve, reject) => {
+      gltfLoader.load(url, (gltf) => {
+        resolve(gltf.scene);
+      }, (xhr) => {
+        // progress: xhr.loaded / xhr.total
+        if (xhr && xhr.loaded) {
+          setMessage('Loading GLTF: ' + Math.round((xhr.loaded / (xhr.total || xhr.loaded)) * 100) + '%');
+        }
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+
+  // load STL from ArrayBuffer (STLLoader.parse)
+  function loadSTLFromArrayBuffer(ab) {
+    try {
+      const geom = stlLoader.parse(ab);
+      // ensure vertex normals exist
+      if (!geom.hasAttribute('normal')) geom.computeVertexNormals?.();
+      // create a material that's visible
+      const mat = new THREE.MeshStandardMaterial({ color: 0x9aa6b2, metalness: 0.1, roughness: 0.9, side: THREE.DoubleSide });
+      const mesh = new THREE.Mesh(geom, mat);
+      return mesh;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async function loadFile(file) {
+    if (!file) return;
+    setMessage('Preparing to load: ' + file.name);
+    try {
+      const ext = file.name.split('.').pop().toLowerCase();
+      // clear old model
+      disposeObject(currentModel);
+      if (currentURL) {
+        try { URL.revokeObjectURL(currentURL); } catch(e) {}
+        currentURL = null;
+      }
+
+      if (ext === 'glb' || ext === 'gltf') {
+        // Use blob URL so GLTFLoader can load textures relative to the file if needed
+        const blobUrl = URL.createObjectURL(file);
+        currentURL = blobUrl;
+        const sceneObj = await loadGLTFFromURL(blobUrl);
+        sceneObj.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
+        currentModel = sceneObj;
+        scene.add(currentModel);
+        fitToView(currentModel);
+        setMessage('Loaded GLTF: ' + file.name);
+      } else if (ext === 'stl') {
+        // STLLoader parses a binary or ascii ArrayBuffer
+        const arrayBuffer = await file.arrayBuffer();
+        const mesh = loadSTLFromArrayBuffer(arrayBuffer);
+        currentModel = new THREE.Group();
+        currentModel.add(mesh);
+        scene.add(currentModel);
+        fitToView(currentModel);
+        setMessage('Loaded STL: ' + file.name);
+      } else {
+        setMessage('Unsupported file type: ' + ext, true);
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage('Error loading file — see console for details', true);
+    }
+  }
+
+  fileInput.addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    loadFile(f);
+  });
+
+  fitBtn.addEventListener('click', () => {
+    if (currentModel) fitToView(currentModel);
+    else setMessage('Nothing to fit — load a model first');
+  });
+
+  resetBtn.addEventListener('click', () => {
+    camera.position.copy(defaultCameraPosition);
+    controls.target.set(0,0,0);
+    controls.update();
+    setMessage('Camera reset');
+  });
+
+  // animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // resize
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // initial canvas size
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  setMessage('Ready — choose a .glb/.gltf/.stl file from your computer');
+
+  // Helpful tips in console
+  console.log('Viewer ready. If the viewport is blank: 1) check the top-right message; 2) open developer console for errors; 3) press "Fit View".');
+
+</script>
 </body>
-
 </html>
