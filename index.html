@@ -1,265 +1,164 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Simple 3D Viewer — GLTF + STL</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harishkumaar — Hardware Design Engineer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    :root { --bg:#0b0d10; --ui:#0f1720; --accent:#60a5fa; --muted:#cbd5e1; }
-    html,body { height:100%; margin:0; background:var(--bg); color:var(--muted); font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;}
-    #fileInput { position: absolute; z-index: 10; top: 12px; left: 12px; }
-    #msg { position: absolute; right: 12px; bottom: 12px; background: rgba(0,0,0,0.45); padding:8px 10px; border-radius:8px; font-size:13px; color:var(--muted); z-index:10; max-width:40vw; }
-    canvas { display:block; width:100vw; height:100vh; }
-    #controls { position:absolute; left:12px; top:48px; z-index:10; display:flex; gap:8px; }
-    .btn { background:var(--ui); color:#fff; border:0; padding:6px 8px; border-radius:6px; cursor:pointer; font-size:13px; }
-    .small { font-size:12px; padding:5px 7px; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: white;
+      color: black;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      padding: 16px 32px;
+      border-bottom: 1px solid #eee;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 24px;
+      font-size: 15px;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* LAYOUT */
+    .wrapper {
+      max-width: 720px;
+      margin: 120px auto 60px auto;
+      padding: 0 32px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 400;
+      margin: 0 0 10px 0;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 50px 0 10px 0;
+      font-weight: 400;
+    }
+    .muted {
+      color: #555;
+    }
+
+    .project, .portfolio-item {
+      margin-bottom: 28px;
+    }
+
+    a {
+      color: black;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
   </style>
+
 </head>
 <body>
 
-<input id="fileInput" type="file" accept=".glb,.gltf,.stl" />
-<div id="controls">
-  <button id="fitBtn" class="btn small">Fit View</button>
-  <button id="resetBtn" class="btn small">Reset Camera</button>
-</div>
-<div id="msg">No model loaded — choose a .glb/.gltf/.stl file</div>
+  <!-- TOP NAV -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<canvas id="viewer"></canvas>
+  <div class="wrapper">
 
-<script type="module">
-  import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js';
-  import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/controls/OrbitControls.js';
-  import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/GLTFLoader.js';
-  import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/DRACOLoader.js';
-  import { STLLoader } from 'https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/loaders/STLLoader.js';
+    <!-- HOME -->
+    <section id="home">
+      <h1>Harishkumaar</h1>
+      <p class="muted">
+        Hardware Design Engineer — PCB layout, embedded systems, sensors, and power electronics.
+      </p>
+    </section>
 
-  // DOM
-  const fileInput = document.getElementById('fileInput');
-  const msg = document.getElementById('msg');
-  const fitBtn = document.getElementById('fitBtn');
-  const resetBtn = document.getElementById('resetBtn');
-  const canvas = document.getElementById('viewer');
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <h2>Portfolio</h2>
 
-  // Renderer, scene, camera
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio || 1);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.outputEncoding = THREE.sRGBEncoding;
+      <div class="portfolio-item">
+        <strong>PCB Designs</strong><br>
+        Collection of high-speed digital, power electronics, and sensor interface boards.
+      </div>
 
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0b0d10);
+      <div class="portfolio-item">
+        <strong>Embedded Systems</strong><br>
+        STM32, ESP32, BLE sensor platforms, robotics control systems.
+      </div>
+    </section>
 
-  const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.01, 10000);
-  const defaultCameraPosition = new THREE.Vector3(0, 1.6, 3);
-  camera.position.copy(defaultCameraPosition);
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.target.set(0,0,0);
+      <div class="project">
+        <strong>Autonomous Rover Navigation PCB</strong><br>
+        STM32-based control board, IMU filtering, efficient power stages.
+        <br><a href="/projects/rover.html">Read case study →</a>
+      </div>
 
-  // Lights
-  const hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.7);
-  const dir = new THREE.DirectionalLight(0xffffff, 0.8);
-  dir.position.set(5, 10, 7.5);
-  dir.castShadow = false;
-  scene.add(hemi, dir);
+      <div class="project">
+        <strong>Low-Noise Power Supply Module</strong><br>
+        &lt;10mV ripple, thermal-optimized design.
+        <br><a href="/projects/power.html">Read case study →</a>
+      </div>
 
-  // simple ground to give depth
-  const ground = new THREE.Mesh(
-    new THREE.PlaneGeometry(200, 200),
-    new THREE.MeshStandardMaterial({ color: 0x0f1113, roughness: 1, metalness: 0 })
-  );
-  ground.rotation.x = -Math.PI / 2;
-  ground.position.y = -1.6;
-  ground.receiveShadow = true;
-  scene.add(ground);
+      <div class="project">
+        <strong>Environmental Sensor Wearable</strong><br>
+        Low-power IoT platform with BLE and PM2.5 monitoring.
+      </div>
+    </section>
 
-  // Loaders
-  const draco = new DRACOLoader();
-  draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
-  const gltfLoader = new GLTFLoader();
-  gltfLoader.setDRACOLoader(draco);
-  const stlLoader = new STLLoader();
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I design electronic systems end-to-end: schematic, PCB layout, firmware bring-up, testing,
+        and manufacturing documentation. I focus on measurable performance—signal integrity, power efficiency,
+        EMI/EMC compliance, and reliability.
+      </p>
+    </section>
 
-  let currentModel = null;
-  let currentURL = null;
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hk@harishkumaar.in">hk@harishkumaar.in</a></p>
+      <p>LinkedIn · GitHub</p>
+    </section>
 
-  function setMessage(text, isError = false) {
-    msg.textContent = text;
-    msg.style.color = isError ? '#ffb4b4' : '';
-  }
+  </div>
 
-  // dispose helper
-  function disposeObject(obj) {
-    if (!obj) return;
-    obj.traverse((c) => {
-      if (c.geometry) c.geometry.dispose();
-      if (c.material) {
-        if (Array.isArray(c.material)) c.material.forEach(m => disposeMaterial(m));
-        else disposeMaterial(c.material);
-      }
-    });
-    scene.remove(obj);
-  }
-  function disposeMaterial(m) {
-    // release textures & maps
-    for (const k in m) {
-      if (m[k] && typeof m[k].dispose === 'function') {
-        try { m[k].dispose(); } catch (e) {}
-      }
-    }
-  }
-
-  // robust fit-to-view: centers, scales, moves camera back appropriately
-  function fitToView(object) {
-    if (!object) return;
-    const box = new THREE.Box3().setFromObject(object);
-    if (!box.isEmpty()) {
-      const size = box.getSize(new THREE.Vector3());
-      const center = box.getCenter(new THREE.Vector3());
-
-      // move object so center is at origin
-      object.position.x += (object.position.x - center.x);
-      object.position.y += (object.position.y - center.y);
-      object.position.z += (object.position.z - center.z);
-
-      // scale object to a reasonable size if extremely big/small
-      const maxDim = Math.max(size.x, size.y, size.z);
-      if (maxDim > 0) {
-        // scale factor so largest dimension occupies ~1.5 units
-        const desired = 1.5;
-        const scale = desired / maxDim;
-        object.scale.setScalar(scale);
-      }
-
-      // set camera distance based on bounding sphere
-      const boxSize = Math.max(size.x, size.y, size.z) * (object.scale.x || 1);
-      const fov = camera.fov * (Math.PI / 180);
-      const distance = Math.abs(boxSize) / Math.tan(fov / 2) * 0.6 + 0.5; // tuned factor
-
-      // position camera a bit up and back
-      camera.position.set(0, Math.max(0.6, boxSize * 0.6), distance);
-      controls.target.set(0, 0, 0);
-      controls.update();
-    } else {
-      // fallback: set default camera
-      camera.position.copy(defaultCameraPosition);
-      controls.target.set(0,0,0);
-      controls.update();
-    }
-  }
-
-  // load GLTF/GLB by blob URL (works with local File objects)
-  function loadGLTFFromURL(url) {
-    return new Promise((resolve, reject) => {
-      gltfLoader.load(url, (gltf) => {
-        resolve(gltf.scene);
-      }, (xhr) => {
-        // progress: xhr.loaded / xhr.total
-        if (xhr && xhr.loaded) {
-          setMessage('Loading GLTF: ' + Math.round((xhr.loaded / (xhr.total || xhr.loaded)) * 100) + '%');
-        }
-      }, (err) => {
-        reject(err);
-      });
-    });
-  }
-
-  // load STL from ArrayBuffer (STLLoader.parse)
-  function loadSTLFromArrayBuffer(ab) {
-    try {
-      const geom = stlLoader.parse(ab);
-      // ensure vertex normals exist
-      if (!geom.hasAttribute('normal')) geom.computeVertexNormals?.();
-      // create a material that's visible
-      const mat = new THREE.MeshStandardMaterial({ color: 0x9aa6b2, metalness: 0.1, roughness: 0.9, side: THREE.DoubleSide });
-      const mesh = new THREE.Mesh(geom, mat);
-      return mesh;
-    } catch (err) {
-      throw err;
-    }
-  }
-
-  async function loadFile(file) {
-    if (!file) return;
-    setMessage('Preparing to load: ' + file.name);
-    try {
-      const ext = file.name.split('.').pop().toLowerCase();
-      // clear old model
-      disposeObject(currentModel);
-      if (currentURL) {
-        try { URL.revokeObjectURL(currentURL); } catch(e) {}
-        currentURL = null;
-      }
-
-      if (ext === 'glb' || ext === 'gltf') {
-        // Use blob URL so GLTFLoader can load textures relative to the file if needed
-        const blobUrl = URL.createObjectURL(file);
-        currentURL = blobUrl;
-        const sceneObj = await loadGLTFFromURL(blobUrl);
-        sceneObj.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } });
-        currentModel = sceneObj;
-        scene.add(currentModel);
-        fitToView(currentModel);
-        setMessage('Loaded GLTF: ' + file.name);
-      } else if (ext === 'stl') {
-        // STLLoader parses a binary or ascii ArrayBuffer
-        const arrayBuffer = await file.arrayBuffer();
-        const mesh = loadSTLFromArrayBuffer(arrayBuffer);
-        currentModel = new THREE.Group();
-        currentModel.add(mesh);
-        scene.add(currentModel);
-        fitToView(currentModel);
-        setMessage('Loaded STL: ' + file.name);
-      } else {
-        setMessage('Unsupported file type: ' + ext, true);
-      }
-    } catch (err) {
-      console.error(err);
-      setMessage('Error loading file — see console for details', true);
-    }
-  }
-
-  fileInput.addEventListener('change', (e) => {
-    const f = e.target.files && e.target.files[0];
-    if (!f) return;
-    loadFile(f);
-  });
-
-  fitBtn.addEventListener('click', () => {
-    if (currentModel) fitToView(currentModel);
-    else setMessage('Nothing to fit — load a model first');
-  });
-
-  resetBtn.addEventListener('click', () => {
-    camera.position.copy(defaultCameraPosition);
-    controls.target.set(0,0,0);
-    controls.update();
-    setMessage('Camera reset');
-  });
-
-  // animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // resize
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-
-  // initial canvas size
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  setMessage('Ready — choose a .glb/.gltf/.stl file from your computer');
-
-  // Helpful tips in console
-  console.log('Viewer ready. If the viewport is blank: 1) check the top-right message; 2) open developer console for errors; 3) press "Fit View".');
-
-</script>
 </body>
 </html>
