@@ -1,0 +1,31 @@
+      <div class="portfolio-grid">
+
+        <a href="/projects/rover.html" class="portfolio-tile">
+          <div class="portfolio-image">
+            <img src="/assets/images/project-2.png" alt="Autonomous Rover Control PCB">
+          </div>
+          <div class="portfolio-content">
+            <h3>Autonomous Rover Control PCB</h3>
+            <p>
+              STM32-based control board for autonomous navigation with IMU fusion,
+              motor drivers, and power management.
+            </p>
+            <span class="tech">STM32 · IMU · Motor Drivers · Power Design</span>
+          </div>
+        </a>
+
+        <a href="/projects/power.html" class="portfolio-tile">
+          <div class="portfolio-image">
+            <img src="/images/power-module.jpg" alt="Low Noise Power Supply Module">
+          </div>
+          <div class="portfolio-content">
+            <h3>Low-Noise Power Supply Module</h3>
+            <p>
+              High-efficiency, low-ripple power module optimized for sensitive
+              analog and RF subsystems.
+            </p>
+            <span class="tech">DC-DC · LDO · EMI · Thermal Design</span>
+          </div>
+        </a>
+
+      </div>
