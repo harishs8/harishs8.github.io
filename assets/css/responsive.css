@@ -1,11 +1,10 @@
 @media (max-width: 768px) {
-  .cards,
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
 
-  .wrapper {
-    padding: 0 20px;
+  .portfolio-thumb {
+    height: 160px;
   }
 }
 
@@ -42,3 +41,8 @@
 }
 
 
+@media (max-width: 768px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+}
