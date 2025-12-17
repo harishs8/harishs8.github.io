@@ -8,3 +8,37 @@
     padding: 0 20px;
   }
 }
+
+
+/* BIO – MOBILE STACK */
+
+@media (max-width: 768px) {
+  .bio-cards {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}
+
+
+@media (max-width: 640px) {
+  nav ul {
+    row-gap: 8px;
+  }
+}
+
+
+/* MOBILE NAV FIX */
+
+@media (max-width: 640px) {
+  nav ul {
+    flex-wrap: wrap;           /* 🔑 allow wrapping */
+    gap: 14px;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+}
+
+
