@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.65;
+}
+
+/* Centered content */
+.wrapper {
+  max-width: 760px;
+  margin: 96px auto 80px;
+  padding: 0 24px;
+}
+
+section {
+  margin-bottom: 72px;
+}
+
+h1 { font-size: 32px; font-weight: 400; margin-bottom: 8px; }
+h2 { font-size: 22px; font-weight: 300; margin-bottom: 16px; }
+
+.muted { color: #555; }
+.justify { text-align: justify; }
