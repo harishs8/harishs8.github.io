@@ -16,14 +16,16 @@ const portfolioProjects = [
         "/assets/images/rover/pcb-bottom.jpg"
       ],
       description:
-        "Designed a m control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
+        "Designed a module control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
       bullets: [
         "4-layer PCB with split analog/digital grounds",
         "STM32 + IMU sensor fusion",
         "Motor driver thermal optimization",
         "EMI/EMC-aware layout"
       ],
-      caseStudyLink: "/projects/rover.html"
+      caseStudyLink: "/projects/rover.html",
+      companyWebsite: "/projects/blog_1.html",
+      companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
 
@@ -48,7 +50,9 @@ const portfolioProjects = [
         "Thermal simulation and copper optimization",
         "EMI mitigation with spread-spectrum"
       ],
-      caseStudyLink: "/projects/power.html"
+      caseStudyLink: "/projects/power.html",
+      companyWebsite:"/projects/power.html",
+      companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   }
 ];
