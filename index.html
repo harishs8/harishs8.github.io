@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,432 +9,450 @@
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/portfolio.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-
 
 <body>
 
-  <!-- TOP NAV -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#experience">Exp</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="wrapper">
+  <body>
 
-    <!-- HOME -->
-    <section id="home">
-      <h1>Harishkumaar</h1>
-      <p class="muted">
-        Hardware Design Engineer — PCB layout, embedded systems, sensors,
-        and power electronics.
-      </p>
-      <p class="justify">
-        I work at the intersection of hardware engineering and
-        product development, designing and building complex electronic
-        systems that move from concept to production. My experience spans
-        system architecture, schematic and PCB design, prototyping, and
-        validation—always with manufacturability and real-world constraints in mind.
-      </p>
-      <p class="justify">
-        I’m driven by curiosity—about technology,
-        manufacturing, supply chains, and the
-        engineering decisions that shape scalable products.
-      </p>
-    </section>
+    <!-- TOP NAV -->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#experience">Exp</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- What I'm Doing -->
-    <section id="what-i-do">
-      <h2>What I’m Doing</h2>
+    <div class="wrapper">
 
-      <div class="cards">
-        <div class="card">
-          <div class="icon">⚙️</div>
-          <div class="content">
-            <h3>New Product Development</h3>
-            <p>Ideation · Innovation · Prototyping · Testing</p>
+      <!-- HOME -->
+      <section id="home">
+        <h1>Harishkumaar</h1>
+        <p class="muted">
+          Hardware Design Engineer — PCB layout, embedded systems, sensors,
+          and power electronics.
+        </p>
+        <p class="justify">
+          I work at the intersection of hardware engineering and
+          product development, designing and building complex electronic
+          systems that move from concept to production. My experience spans
+          system architecture, schematic and PCB design, prototyping, and
+          validation—always with manufacturability and real-world constraints in mind.
+        </p>
+        <p class="justify">
+          I’m driven by curiosity—about technology,
+          manufacturing, supply chains, and the
+          engineering decisions that shape scalable products.
+        </p>
+      </section>
+
+      <!-- What I'm Doing -->
+      <section id="what-i-do">
+        <h2>What I’m Doing</h2>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <div class="content">
+              <h3>New Product Development</h3>
+              <p>Ideation · Innovation · Prototyping · Testing</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">📐</div>
+            <div class="content">
+              <h3>Schematics Capture</h3>
+              <p>Component Selection · Cost Reduction · Version Control</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧩</div>
+            <div class="content">
+              <h3>PCB Design</h3>
+              <p>Layout & Routing · High Speed · DFM · DFA · Libraries</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">🤖</div>
+            <div class="content">
+              <h3>Robotics</h3>
+              <p>Motors & Sensors · Power Calculation · Prototyping</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <div class="content">
+              <h3>Firmware Development</h3>
+              <p>C · C++ · HAL · Python · Communication Protocols</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">📊</div>
+            <div class="content">
+              <h3>Product Management</h3>
+              <p>Strategy · Roadmap · Requirements · Prioritization · PLM</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="card">
-          <div class="icon">📐</div>
-          <div class="content">
-            <h3>Schematics Capture</h3>
-            <p>Component Selection · Cost Reduction · Version Control</p>
+      <!-- PORTFOLIO -->
+ <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Experience -->
+      <!-- Experience -->
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="experience-grid">
+
+          <!-- ================= EMOTORAD ================= -->
+          <div class="exp-card" onclick="toggleCard(this)">
+            <div class="exp-header">
+              <div class="exp-company">
+                <h3>EMotorad (Inkodop Technologies Pvt Ltd)</h3>
+                <span class="location">Bangalore</span>
+              </div>
+              <span class="date">Oct 2023 – Present</span>
+            </div>
+
+            <div class="exp-body">
+
+              <p class="role">External Consultant – Hardware Development</p>
+              <p class="role-date">Sept 2024 – Present</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>Electric Two-Wheeler — 900W Off / On-Board Charger</b>
+                  <span>System architecture, power calculations, hardware design (In progress)</span>
+                </li>
+              </ul>
+
+              <p class="role">Engineer – Hardware Development</p>
+              <p class="role-date">Oct 2023 – Aug 2024</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>E-Bike — Smart Motor Controller Unit (250W)</b>
+                  <span>
+                    Complete powertrain architecture, BLE integration, hardware design,
+                    component engineering, vendor management
+                  </span>
+                </li>
+                <li>
+                  <b>Compliance Testing</b>
+                  <span>AIS-004 Part-3</span>
+                </li>
+                <li>
+                  <b>E-Bike — Connected Display</b>
+                  <span>
+                    LTE with 2G fallback, GNSS for trip data, tracking and SOS,
+                    coloured TFT (non-intelligent, touch)
+                  </span>
+                </li>
+                <li>
+                  <b>Electric Two-Wheeler — 48V Battery Management System</b>
+                  <span>
+                    Architecture and hardware design, NXP-based AFE & MCU,
+                    pre-charge calculations, EMI/EMC-compliant PCB layout
+                  </span>
+                </li>
+                <li>
+                  <b>Instrument Cluster (BCM + TCU)</b>
+                  <span>
+                    Android-based TCU with MIPI display (Quectel),
+                    BCM with OV/UV and reverse-polarity protection
+                  </span>
+                </li>
+                <li>
+                  <b>Intelligent BMS — 36V / 48V (E-Bike)</b>
+                  <span>
+                    TI-based AFE with NXP MCU, compatible with NMC & LFP chemistries
+                  </span>
+                </li>
+              </ul>
+              <!-- 🔗 Company link footer -->
+              <div class="exp-footer">
+                <div class="exp-footer-right">
+                  <a href="https://emotorad.com" target="_blank" rel="noopener noreferrer">
+                    Company Website
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/emotorad/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
           </div>
+
+          <!-- ================= HOLOWORLD ================= -->
+          <div class="exp-card" onclick="toggleCard(this)">
+            <div class="exp-header">
+              <div class="exp-company">
+                <h3>HoloWorld (Kaaya Virtualization Pvt Ltd)</h3>
+                <span class="location">Mysuru</span>
+              </div>
+              <span class="date">Sept 2022 – Present</span>
+            </div>
+
+            <div class="exp-body">
+              <p class="role">Robotics Hardware Engineer & Product Manager</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>HoloSuit — B2B</b>
+                  <span>
+                    Led hardware & system design for full-body motion-capture suit for VR/XR,
+                    including electronics, harness architecture, and cross-functional coordination
+                  </span>
+                </li>
+                <li>
+                  <b>Cleaning Robot (Client) — B2B</b>
+                  <span>
+                    Wiring harness and sensor integration for ATEX-rated environments
+                  </span>
+                </li>
+                <li>
+                  <b>Build Your Own Robot (BYOR) — B2C</b>
+                  <span>
+                    Designed BMS for consumer product shipped to 1000+ customers
+                  </span>
+                </li>
+                <li>
+                  <b>4-Wheeled Research Robot</b>
+                  <span>
+                    Hardware design for omni-directional autonomous robot,
+                    battery calculations and wiring harness design
+                  </span>
+                </li>
+                <li>
+                  <b>Exo-Skeleton</b>
+                  <span>
+                    Motor selection, power calculations, control electronics integration,
+                    medical rehabilitation wiring harness execution
+                  </span>
+                </li>
+              </ul>
+              <!-- 🔗 Company link footer -->
+              <div class="exp-footer">
+                <div class="exp-footer-right">
+                  <a href="https://www.linkedin.com/company/holoworld/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= MAHINDRA ================= -->
+          <div class="exp-card" onclick="toggleCard(this)">
+            <div class="exp-header">
+              <div class="exp-company">
+                <h3>Mahindra & Mahindra</h3>
+                <span class="location">Nashik</span>
+              </div>
+              <span class="date">Mar 2021 – Sept 2022</span>
+            </div>
+
+            <div class="exp-body">
+
+              <p class="role">Assistant Manager — Paint Shop</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>Paint Shop Automation</b>
+                  <span>
+                    Developed in-house auto colour changer achieving 8% solvent reduction,
+                    worked with FANUC/DURR robots, PLCs (Allen-Bradley), FactoryTalk HMI
+                  </span>
+                </li>
+                <li>
+                  <b>Robotics & Controls</b>
+                  <span>
+                    Ethernet TCP/IP, RS232, RS485, ControlNet, DH+,
+                    fail-safe poka-yoke mechanisms
+                  </span>
+                </li>
+              </ul>
+
+              <p class="role">Graduate Engineer Trainee — Press Shop</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>Press Line Quality Systems</b>
+                  <span>
+                    OpenCV-based defect detection, automatic cushion-pin detection
+                    using PLC and low-cost vision setup
+                  </span>
+                </li>
+              </ul>
+              <!-- 🔗 Company link footer -->
+              <div class="exp-footer">
+                <div class="exp-footer-right">
+                  <a href="https://auto.mahindra.com/" target="_blank" rel="noopener noreferrer">
+                    Company Website
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/mahindragroup/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <!-- ================= SAEGCT ================= -->
+          <div class="exp-card" onclick="toggleCard(this)">
+            <div class="exp-header">
+              <div class="exp-company">
+                <h3>SAEGCT Collegiate Club — GCT</h3>
+                <span class="location">Coimbatore</span>
+              </div>
+              <span class="date">Dec 2017 – Apr 2020</span>
+            </div>
+
+            <div class="exp-body">
+              <p class="role">Electrical Subsystem Lead</p>
+
+              <ul class="exp-projects">
+                <li>
+                  <b>BAJA SAE Arizona 2020</b>
+                  <span>
+                    Led electrical subsystem, data-driven design achieving 35% weight
+                    reduction and 25% part reduction
+                  </span>
+                </li>
+                <li>
+                  <b>Testing & Validation</b>
+                  <span>
+                    NI cDAQ, Arduino, dynamometer testing, MATLAB simulations
+                  </span>
+                </li>
+                <li>
+                  <b>Competition Performance</b>
+                  <span>
+                    21st overall, 8th in cost event among 100+ international teams
+                  </span>
+                </li>
+              </ul>
+              <!-- 🔗 Company link footer -->
+              <div class="exp-footer">
+                <div class="exp-footer-right">
+                  <a href="https://www.linkedin.com/company/saegct/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <div class="icon">🧩</div>
-          <div class="content">
-            <h3>PCB Design</h3>
-            <p>Layout & Routing · High Speed · DFM · DFA · Libraries</p>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="icon">🤖</div>
-          <div class="content">
-            <h3>Robotics</h3>
-            <p>Motors & Sensors · Power Calculation · Prototyping</p>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="icon">💻</div>
-          <div class="content">
-            <h3>Firmware Development</h3>
-            <p>C · C++ · HAL · Python · Communication Protocols</p>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="icon">📊</div>
-          <div class="content">
-            <h3>Product Management</h3>
-            <p>Strategy · Roadmap · Requirements · Prioritization · PLM</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <div class="portfolio-grid" id="portfolioGrid"></div>
-    </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <h2>Portfolio</h2>
 
-      <div class="portfolio-grid">
 
-        <a href="/projects/rover.html" class="portfolio-tile">
-          <div class="portfolio-image">
-            <img src="/assets/images/project-2.png" alt="Autonomous Rover Control PCB">
-          </div>
-          <div class="portfolio-content">
-            <h3>Autonomous Rover Control PCB</h3>
+
+
+
+
+
+
+
+      <section id="bio">
+        <h2>Bio</h2>
+
+        <div class="bio-cards">
+          <div class="bio-card">
+            <h3>Who I Am</h3>
             <p>
-              STM32-based control board
+              Hardware Design Engineer working at the intersection of hardware engineering
+              and product development. I design and build complex electronic systems
+              from concept to production with manufacturability in mind.
             </p>
-            <span class="tech">STM32 · IMU · Motor Drivers · Power Design</span>
           </div>
-        </a>
 
-        <a href="/projects/power.html" class="portfolio-tile">
-          <div class="portfolio-image">
-            <img src="/images/power-module.jpg" alt="Low Noise Power Supply Module">
-          </div>
-          <div class="portfolio-content">
-            <h3>Low-Noise Power Supply Module</h3>
+          <div class="bio-card">
+            <h3>What I Do</h3>
             <p>
-              High-efficiency, low-ripple power module optimized for sensitive
-              analog and RF subsystems.
+              System architecture, schematic and PCB design, embedded systems,
+              prototyping, validation, and compliance testing for automotive,
+              robotics, and consumer electronics.
             </p>
-            <span class="tech">DC-DC · LDO · EMI · Thermal Design</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Experience -->
-    <!-- Experience -->
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="experience-grid">
-
-        <!-- ================= EMOTORAD ================= -->
-        <div class="exp-card" onclick="toggleCard(this)">
-          <div class="exp-header">
-            <div class="exp-company">
-              <h3>EMotorad (Inkodop Technologies Pvt Ltd)</h3>
-              <span class="location">Bangalore</span>
-            </div>
-            <span class="date">Oct 2023 – Present</span>
           </div>
 
-          <div class="exp-body">
-
-            <p class="role">External Consultant – Hardware Development</p>
-            <p class="role-date">Sept 2024 – Present</p>
-
-            <ul class="exp-projects">
-              <li>
-                <b>Electric Two-Wheeler — 900W Off / On-Board Charger</b>
-                <span>System architecture, power calculations, hardware design (In progress)</span>
-              </li>
-            </ul>
-
-            <p class="role">Engineer – Hardware Development</p>
-            <p class="role-date">Oct 2023 – Aug 2024</p>
-
-            <ul class="exp-projects">
-              <li>
-                <b>E-Bike — Smart Motor Controller Unit (250W)</b>
-                <span>
-                  Complete powertrain architecture, BLE integration, hardware design,
-                  component engineering, vendor management
-                </span>
-              </li>
-              <li>
-                <b>Compliance Testing</b>
-                <span>AIS-004 Part-3</span>
-              </li>
-              <li>
-                <b>E-Bike — Connected Display</b>
-                <span>
-                  LTE with 2G fallback, GNSS for trip data, tracking and SOS,
-                  coloured TFT (non-intelligent, touch)
-                </span>
-              </li>
-              <li>
-                <b>Electric Two-Wheeler — 48V Battery Management System</b>
-                <span>
-                  Architecture and hardware design, NXP-based AFE & MCU,
-                  pre-charge calculations, EMI/EMC-compliant PCB layout
-                </span>
-              </li>
-              <li>
-                <b>Instrument Cluster (BCM + TCU)</b>
-                <span>
-                  Android-based TCU with MIPI display (Quectel),
-                  BCM with OV/UV and reverse-polarity protection
-                </span>
-              </li>
-              <li>
-                <b>Intelligent BMS — 36V / 48V (E-Bike)</b>
-                <span>
-                  TI-based AFE with NXP MCU, compatible with NMC & LFP chemistries
-                </span>
-              </li>
-            </ul>
-            <!-- 🔗 Company link footer -->
-            <div class="exp-footer">
-              <div class="exp-footer-right">
-                <a href="https://emotorad.com" target="_blank" rel="noopener noreferrer">
-                  Company Website
-                </a>
-
-                <a href="https://www.linkedin.com/company/emotorad/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- ================= HOLOWORLD ================= -->
-        <div class="exp-card" onclick="toggleCard(this)">
-          <div class="exp-header">
-            <div class="exp-company">
-              <h3>HoloWorld (Kaaya Virtualization Pvt Ltd)</h3>
-              <span class="location">Mysuru</span>
-            </div>
-            <span class="date">Sept 2022 – Present</span>
-          </div>
-
-          <div class="exp-body">
-            <p class="role">Robotics Hardware Engineer & Product Manager</p>
-
-            <ul class="exp-projects">
-              <li>
-                <b>HoloSuit — B2B</b>
-                <span>
-                  Led hardware & system design for full-body motion-capture suit for VR/XR,
-                  including electronics, harness architecture, and cross-functional coordination
-                </span>
-              </li>
-              <li>
-                <b>Cleaning Robot (Client) — B2B</b>
-                <span>
-                  Wiring harness and sensor integration for ATEX-rated environments
-                </span>
-              </li>
-              <li>
-                <b>Build Your Own Robot (BYOR) — B2C</b>
-                <span>
-                  Designed BMS for consumer product shipped to 1000+ customers
-                </span>
-              </li>
-              <li>
-                <b>4-Wheeled Research Robot</b>
-                <span>
-                  Hardware design for omni-directional autonomous robot,
-                  battery calculations and wiring harness design
-                </span>
-              </li>
-              <li>
-                <b>Exo-Skeleton</b>
-                <span>
-                  Motor selection, power calculations, control electronics integration,
-                  medical rehabilitation wiring harness execution
-                </span>
-              </li>
-            </ul>
-            <!-- 🔗 Company link footer -->
-            <div class="exp-footer">
-              <div class="exp-footer-right">
-                <a href="https://www.linkedin.com/company/holoworld/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+          <div class="bio-card">
+            <h3>What Drives Me</h3>
+            <p>
+              Curiosity about technology, manufacturing, supply chains, and
+              engineering decisions that shape scalable, real-world products.
+            </p>
           </div>
         </div>
+      </section>
 
-        <!-- ================= MAHINDRA ================= -->
-        <div class="exp-card" onclick="toggleCard(this)">
-          <div class="exp-header">
-            <div class="exp-company">
-              <h3>Mahindra & Mahindra</h3>
-              <span class="location">Nashik</span>
-            </div>
-            <span class="date">Mar 2021 – Sept 2022</span>
-          </div>
-
-          <div class="exp-body">
-
-            <p class="role">Assistant Manager — Paint Shop</p>
-
-            <ul class="exp-projects">
-              <li>
-                <b>Paint Shop Automation</b>
-                <span>
-                  Developed in-house auto colour changer achieving 8% solvent reduction,
-                  worked with FANUC/DURR robots, PLCs (Allen-Bradley), FactoryTalk HMI
-                </span>
-              </li>
-              <li>
-                <b>Robotics & Controls</b>
-                <span>
-                  Ethernet TCP/IP, RS232, RS485, ControlNet, DH+,
-                  fail-safe poka-yoke mechanisms
-                </span>
-              </li>
-            </ul>
-
-            <p class="role">Graduate Engineer Trainee — Press Shop</p>
-
-            <ul class="exp-projects">
-              <li>
-                <b>Press Line Quality Systems</b>
-                <span>
-                  OpenCV-based defect detection, automatic cushion-pin detection
-                  using PLC and low-cost vision setup
-                </span>
-              </li>
-            </ul>
-            <!-- 🔗 Company link footer -->
-            <div class="exp-footer">
-              <div class="exp-footer-right">
-                <a href="https://auto.mahindra.com/" target="_blank" rel="noopener noreferrer">
-                  Company Website
-                </a>
-
-                <a href="https://www.linkedin.com/company/mahindragroup/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-
-        <!-- ================= SAEGCT ================= -->
-        <div class="exp-card" onclick="toggleCard(this)">
-          <div class="exp-header">
-            <div class="exp-company">
-              <h3>SAEGCT Collegiate Club — GCT</h3>
-              <span class="location">Coimbatore</span>
-            </div>
-            <span class="date">Dec 2017 – Apr 2020</span>
-          </div>
 
-          <div class="exp-body">
-            <p class="role">Electrical Subsystem Lead</p>
 
-            <ul class="exp-projects">
-              <li>
-                <b>BAJA SAE Arizona 2020</b>
-                <span>
-                  Led electrical subsystem, data-driven design achieving 35% weight
-                  reduction and 25% part reduction
-                </span>
-              </li>
-              <li>
-                <b>Testing & Validation</b>
-                <span>
-                  NI cDAQ, Arduino, dynamometer testing, MATLAB simulations
-                </span>
-              </li>
-              <li>
-                <b>Competition Performance</b>
-                <span>
-                  21st overall, 8th in cost event among 100+ international teams
-                </span>
-              </li>
-            </ul>
-            <!-- 🔗 Company link footer -->
-            <div class="exp-footer">
-              <div class="exp-footer-right">
-                <a href="https://www.linkedin.com/company/saegct/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
 
-          </div>
-        </div>
 
-      </div>
-    </section>
 
 
 
@@ -449,37 +468,9 @@
 
 
 
-    <section id="bio">
-      <h2>Bio</h2>
 
-      <div class="bio-cards">
-        <div class="bio-card">
-          <h3>Who I Am</h3>
-          <p>
-            Hardware Design Engineer working at the intersection of hardware engineering
-            and product development. I design and build complex electronic systems
-            from concept to production with manufacturability in mind.
-          </p>
-        </div>
 
-        <div class="bio-card">
-          <h3>What I Do</h3>
-          <p>
-            System architecture, schematic and PCB design, embedded systems,
-            prototyping, validation, and compliance testing for automotive,
-            robotics, and consumer electronics.
-          </p>
-        </div>
 
-        <div class="bio-card">
-          <h3>What Drives Me</h3>
-          <p>
-            Curiosity about technology, manufacturing, supply chains, and
-            engineering decisions that shape scalable, real-world products.
-          </p>
-        </div>
-      </div>
-    </section>
 
 
 
@@ -489,37 +480,14 @@
 
 
 
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hk@harishkumaar.in">hk@harishkumaar.in</a></p>
+        <p>LinkedIn · GitHub</p>
+      </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:hk@harishkumaar.in">hk@harishkumaar.in</a></p>
-      <p>LinkedIn · GitHub</p>
-    </section>
-
-    <!-- </div>
+      <!-- </div>
   <div class="viewer-container">
     <iframe src="https://tudelft492.autodesk360.com/shares/public/SH90d2dQT28d5b60281137e3fa3aa25c6ebd?mode=embed"
       width="1024" height="768" allowfullscreen frameborder="0">
@@ -542,40 +510,38 @@
 
 
 
-    <div class="portfolio-overlay" id="portfolioOverlay">
-      <div class="portfolio-modal">
-        <button class="close-btn" onclick="closePortfolio()">×</button>
+      <div class="portfolio-overlay" id="portfolioOverlay">
+        <div class="portfolio-modal">
+          <button class="close-btn" onclick="closePortfolio()">×</button>
 
-        <h3 id="modalTitle"></h3>
-        <div id="modalImages" class="modal-gallery"></div>
-        <p id="modalDescription"></p>
-        <ul id="modalList"></ul>
+          <h3 id="modalTitle"></h3>
+          <div id="modalImages" class="modal-gallery"></div>
+          <p id="modalDescription"></p>
+          <ul id="modalList"></ul>
 
-        <a id="modalLink" class="read-more">
-          Read full case study →
-        </a>
+          <a id="modalLink" class="read-more">Read full case study →</a>
+        </div>
       </div>
-    </div>
 
 
 
 
 
+      <style>
+        .viewer-container {
+          display: flex;
+          justify-content: center;
+          /* Centers horizontally */
+          margin-top: 40px;
+          /* Optional */
+        }
+      </style>
 
-    <style>
-      .viewer-container {
-        display: flex;
-        justify-content: center;
-        /* Centers horizontally */
-        margin-top: 40px;
-        /* Optional */
-      }
-    </style>
-
-    <script src="/assets/js/portfolio-data.js"></script>
-    <script src="/assets/js/portfolio-ui.js"></script>
-
-</body>
+      <!-- JS (ORDER MATTERS) -->
+      <script src="/assets/js/main.js"></script>
+      <script src="/assets/js/portfolio-data.js"></script>
+      <script src="/assets/js/portfolio-ui.js"></script>
+  </body>
 
 
 </html>
