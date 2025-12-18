@@ -1,22 +1,20 @@
 const grid = document.getElementById("portfolioGrid");
 const overlay = document.getElementById("portfolioOverlay");
 
-portfolioProjects.forEach(project => {
+portfolioProjects.forEach(p => {
   const card = document.createElement("div");
   card.className = "portfolio-card";
-  card.onclick = () => openPortfolio(project.id);
+  card.onclick = () => openPortfolio(p.id);
 
   card.innerHTML = `
     <div class="portfolio-thumb">
-      <img src="${project.thumbnail}" alt="${project.title}">
+      <img src="${p.thumbnail}">
     </div>
-
     <div class="portfolio-content">
-      <h3>${project.title}</h3>
-      <p>${project.shortDescription}</p>
-
+      <h3>${p.title}</h3>
+      <p>${p.shortDescription}</p>
       <div class="portfolio-tags">
-        ${project.tags.map(t => `<span>${t}</span>`).join("")}
+        ${p.tags.map(t => `<span>${t}</span>`).join("")}
       </div>
     </div>
   `;
@@ -25,30 +23,21 @@ portfolioProjects.forEach(project => {
 });
 
 function openPortfolio(id) {
-  const project = portfolioProjects.find(p => p.id === id);
-  if (!project) return;
+  const p = portfolioProjects.find(x => x.id === id);
+  if (!p) return;
 
-  document.getElementById("modalTitle").innerText = project.title;
-  document.getElementById("modalDescription").innerText =
-    project.modal.description;
+  document.getElementById("modalTitle").innerText = p.title;
+  document.getElementById("modalDescription").innerText = p.modal.description;
+  document.getElementById("modalLink").href = p.modal.link;
 
-  const images = document.getElementById("modalImages");
-  images.innerHTML = "";
-  project.modal.images.forEach(src => {
+  const imgs = document.getElementById("modalImages");
+  imgs.innerHTML = "";
+  p.modal.images.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    images.appendChild(img);
+    img.style.width = "100%";
+    imgs.appendChild(img);
   });
-
-  const list = document.getElementById("modalList");
-  list.innerHTML = "";
-  project.modal.bullets.forEach(b => {
-    const li = document.createElement("li");
-    li.innerText = b;
-    list.appendChild(li);
-  });
-
-  document.getElementById("modalLink").href = project.modal.link;
 
   overlay.classList.add("active");
   document.body.style.overflow = "hidden";

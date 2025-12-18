@@ -16,7 +16,7 @@ const portfolioProjects = [
         "/assets/images/rover/pcb-bottom.jpg"
       ],
       description:
-        "Designed a multi-layer control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
+        "Designed a m control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
       bullets: [
         "4-layer PCB with split analog/digital grounds",
         "STM32 + IMU sensor fusion",
