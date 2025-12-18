@@ -31,7 +31,11 @@ function openPortfolio(id) {
 
   document.getElementById("modalTitle").textContent = p.title;
   document.getElementById("modalDescription").textContent = p.modal.description;
-  document.getElementById("modalLink").href = p.modal.link;
+ 
+  document.getElementById("modalCompany").href = p.modal.companyWebsite;
+  // document.getElementById("modalLinkedIn").href = p.modal.companyLinkedIn;
+
+
 
   /* Images */
   const imgs = document.getElementById("modalImages");
