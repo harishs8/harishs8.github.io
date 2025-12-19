@@ -4,7 +4,7 @@ const portfolioProjects = [
   {
     id: "rover",
     title: "Autonomous Rover Control PCB",
-    thumbnail: "/assets/images/rover/cover.jpg",
+    thumbnail: "../projects/Files/TCU/test1.jpg",
     shortDescription:
       "STM32-based control board for autonomous navigation with IMU fusion and motor drivers.",
 
@@ -32,7 +32,7 @@ const portfolioProjects = [
   {
     id: "power",
     title: "Low-Noise Power Supply Module",
-    thumbnail: "/assets/images/power/cover.jpg",
+    thumbnail: "../projects/Files/TCU/test1.jpg",
     shortDescription:
       "High-efficiency, low-ripple power module optimized for sensitive analog and RF subsystems.",
 
