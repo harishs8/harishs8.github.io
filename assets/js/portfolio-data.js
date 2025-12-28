@@ -149,6 +149,80 @@ const portfolioProjects = [
       companyWebsite: "https://www.emotorad.com/",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
+  },
+  {
+  id: "6",
+  title: "Holosuit 3.0 – Full Body Motion Capture Suit",
+  thumbnail: "/projects/Files/Holoworld/holosuit.jpg",
+  shortDescription:
+    "XR-focused full-body motion capture suit with integrated sensor network and scalable electronics architecture.",
+  tags: ["Motion Capture", "XR/VR", "Wearable Electronics", "Sensor Networks"],
+  modal: {
+    images: [
+      "/projects/Files/Holoworld/holosuit.jpg"
+    ],
+    description:
+      "Led electronics design and hardware engineering of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
+    bullets: [
+      "Designed electronics system and integrated sensor harnessing",
+      "Developed test jigs and stress-testing methodology for performance validation",
+      "Hardware quality assurance for 40+ motion sensors",
+      "Cross-functional collaboration with software, industrial design, and apparel teams"
+    ],
+    caseStudyLink: "/projects/holosuit.html",
+    companyWebsite: "https://holoworld.one/",
+    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
   }
+},
+{
+  id: "7",
+  title: "4-Wheeled Omni-Directional Research Robot",
+  thumbnail: "/projects/Files/Holoworld/4wrobot.jpg",
+  shortDescription:
+    "Research robot platform with autonomous navigation, power management and hardware integration.",
+  tags: ["Robotics", "Autonomous Navigation", "Power Systems"],
+  modal: {
+    images: [
+      "/projects/Files/Holoworld/4wrobot.jpg"
+    ],
+    description:
+      "Engineered a robust robotic hardware platform with omnidirectional mobility and modular component integration.",
+    bullets: [
+      "Motor selection, battery sizing and power distribution design",
+      "Designed wiring harness architecture for reliability",
+      "Seamless integration of controllers, sensors and drive system",
+      "Supporting autonomous navigation capability development"
+    ],
+    caseStudyLink: "/projects/research-robot.html",
+    companyWebsite: "https://holoworld.one/",
+    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+  }
+},
+{
+  id: "8",
+  title: "Lower-Body Exoskeleton – Rehabilitation System",
+  thumbnail: "/projects/Files/Holoworld/exoskeleton.jpg",
+  shortDescription:
+    "Assistive powered exoskeleton enabling guided rehabilitation and gait support.",
+  tags: ["Exoskeleton", "Biomechanics", "Motor Control", "Medical Hardware"],
+  modal: {
+    images: [
+      "/projects/Files/Holoworld/exoskeleton.jpg"
+    ],
+    description:
+      "Supported design of an assistive lower-body exoskeleton for medical rehabilitation applications.",
+    bullets: [
+      "Motor and actuator selection based on torque/biomechanics requirements",
+      "Hardware integration and sensor interfacing",
+      "Design of wiring harness and mounting solutions",
+      "Contributed to early testing and evaluation cycles"
+    ],
+    caseStudyLink: "/projects/exoskeleton.html",
+    companyWebsite: "https://holoworld.one/",
+    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+  }
+}
+
+
 
 ];
