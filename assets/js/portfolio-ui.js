@@ -44,6 +44,7 @@ function openPortfolio(id) {
     const img = document.createElement("img");
     img.src = src;
     img.loading = "lazy";
+    img.className = "modal-image";
     imgs.appendChild(img);
   });
 
