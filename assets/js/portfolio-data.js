@@ -2,9 +2,37 @@
 
 const portfolioProjects = [
   {
-    id: "rover",
+    id: "holosuit",
+    title: "HoloSuit VR Full-Body Tracking and Haptics",
+    thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
+    shortDescription:
+      "Motion capture suit with integrated IMUs and haptic feedback for immersive VR experiences.",
+
+    tags: ["RP2040", "IMU", "Haptics", "Mo-Cap"],
+
+    modal: {
+      images: [
+        "/projects/Files/TCU/test1.jpg",
+        "/projects/Files/TCU/test1.jpg",
+        "/projects/Files/TCU/test1.jpg"
+      ],
+      description:
+        "Designed a module control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
+      bullets: [
+        "4-layer PCB with split analog/digital grounds",
+        "STM32 + IMU sensor fusion",
+        "Motor driver thermal optimization",
+        "EMI/EMC-aware layout"
+      ],
+      caseStudyLink: "/projects/rover.html",
+      companyWebsite: "/projects/blog_1.html",
+      companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
+    }
+  },
+  {
+    id: "rover1",
     title: "Autonomous Rover Control PCB",
-    thumbnail: "../projects/Files/TCU/test1.jpg",
+    thumbnail: "/projects/Files/TCU/test1.jpg",
     shortDescription:
       "STM32-based control board for autonomous navigation with IMU fusion and motor drivers.",
 
@@ -12,8 +40,8 @@ const portfolioProjects = [
 
     modal: {
       images: [
-        "/assets/images/rover/pcb-top.jpg",
-        "/assets/images/rover/pcb-bottom.jpg"
+        "/projects/Files/TCU/test1.jpg",
+        "/projects/Files/TCU/test1.jpg"
       ],
       description:
         "Designed a module control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
@@ -29,10 +57,16 @@ const portfolioProjects = [
     }
   },
 
+
+
+
+
+  
+
   {
     id: "power",
     title: "Low-Noise Power Supply Module",
-    thumbnail: "../projects/Files/TCU/test1.jpg",
+    thumbnail: "/projects/Files/TCU/test1.jpg",
     shortDescription:
       "High-efficiency, low-ripple power module optimized for sensitive analog and RF subsystems.",
 
