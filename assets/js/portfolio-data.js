@@ -34,7 +34,7 @@ const portfolioProjects = [
     id: "1",
     title: "Smart Motor Controller – 250W E-Bike",
     featured: true,
-    thumbnail: "/projects/Files/EMotorad/mcu.jpg",
+    thumbnail: "/projects/Files/SmartBike/B6.jpg",
     shortDescription:
       "Designed a complete motor controller PCB with powertrain control, Bluetooth connectivity, and AIS-004 compliance.",
     tags: ["Motor Drive", "STM32", "BLE"],
