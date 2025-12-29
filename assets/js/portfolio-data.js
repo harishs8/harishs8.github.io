@@ -18,7 +18,7 @@ const portfolioProjects = [
         "/projects/Files/holosuittt3/test1.jpg"
       ],
       description:
-        "Designed a module control PCB supporting sensor fusion, closed-loop motor control, and efficient power distribution under tight EMI constraints.",
+        "Led electronics design and hardware engineering of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
       bullets: [
         "4-layer PCB with split analog/digital grounds",
         "STM32 + IMU sensor fusion",
