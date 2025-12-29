@@ -3,6 +3,7 @@
 const portfolioProjects = [
   {
     id: "holosuit",
+    featured: true,
     title: "HoloSuit - Immersive Suit",
     thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
     shortDescription:
@@ -32,6 +33,7 @@ const portfolioProjects = [
   {
     id: "1",
     title: "Smart Motor Controller – 250W E-Bike",
+    featured: true,
     thumbnail: "/projects/Files/EMotorad/mcu.jpg",
     shortDescription:
       "Designed a complete motor controller PCB with powertrain control, Bluetooth connectivity, and AIS-004 compliance.",
@@ -150,30 +152,32 @@ const portfolioProjects = [
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
-  {
-  id: "6",
-  title: "Holosuit 3.0 – Full Body Motion Capture Suit",
-  thumbnail: "/projects/Files/Holoworld/holosuit.jpg",
-  shortDescription:
-    "XR-focused full-body motion capture suit with integrated sensor network and scalable electronics architecture.",
-  tags: ["Motion Capture", "XR/VR", "Wearable Electronics", "Sensor Networks"],
-  modal: {
-    images: [
-      "/projects/Files/Holoworld/holosuit.jpg"
-    ],
-    description:
-      "Led electronics design and hardware engineering of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
-    bullets: [
-      "Designed electronics system and integrated sensor harnessing",
-      "Developed test jigs and stress-testing methodology for performance validation",
-      "Hardware quality assurance for 40+ motion sensors",
-      "Cross-functional collaboration with software, industrial design, and apparel teams"
-    ],
-    caseStudyLink: "/projects/holosuit.html",
-    companyWebsite: "https://holoworld.one/",
-    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
-  }
-},
+//   {
+//   id: "6",
+//   featured: true,  // only for top 4
+
+//   title: "Holosuit 3.0 – Full Body Motion Capture Suit",
+//   thumbnail: "/projects/Files/Holoworld/holosuit.jpg",
+//   shortDescription:
+//     "XR-focused full-body motion capture suit with integrated sensor network and scalable electronics architecture.",
+//   tags: ["Motion Capture", "XR/VR", "Wearable Electronics", "Sensor Networks"],
+//   modal: {
+//     images: [
+//       "/projects/Files/Holoworld/holosuit.jpg"
+//     ],
+//     description:
+//       "Led electronics design and hardware engineering of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
+//     bullets: [
+//       "Designed electronics system and integrated sensor harnessing",
+//       "Developed test jigs and stress-testing methodology for performance validation",
+//       "Hardware quality assurance for 40+ motion sensors",
+//       "Cross-functional collaboration with software, industrial design, and apparel teams"
+//     ],
+//     caseStudyLink: "/projects/holosuit.html",
+//     companyWebsite: "https://holoworld.one/",
+//     companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+//   }
+// },
 {
   id: "7",
   title: "4-Wheeled Omni-Directional Research Robot",

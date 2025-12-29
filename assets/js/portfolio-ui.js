@@ -1,81 +1,108 @@
-const grid = document.getElementById("portfolioGrid");
+const featuredGrid = document.getElementById("featuredGrid");
+const moreGrid = document.getElementById("moreProjectsGrid");
+const toggleBtn = document.getElementById("toggleProjects");
+const otherGrid = document.getElementById("otherGrid");
+
+
 const overlay = document.getElementById("portfolioOverlay");
 const modal = document.querySelector(".portfolio-modal");
 
-/* Build cards */
-portfolioProjects.forEach(p => {
+/* -----------------------------
+   BUILD PORTFOLIO CARDS
+----------------------------- */
+
+portfolioProjects.forEach(project => {
   const card = document.createElement("div");
   card.className = "portfolio-card";
-  card.onclick = () => openPortfolio(p.id);
+  card.onclick = () => openPortfolio(project.id);
 
   card.innerHTML = `
     <div class="portfolio-thumb">
-      <img src="${p.thumbnail}" alt="">
+      <img src="${project.thumbnail}" alt="${project.title}">
     </div>
     <div class="portfolio-content">
-      <h3>${p.title}</h3>
-      <p>${p.shortDescription}</p>
+      <h3>${project.title}</h3>
+      <p>${project.shortDescription}</p>
       <div class="portfolio-tags">
-        ${p.tags.map(t => `<span>${t}</span>`).join("")}
+        ${project.tags.slice(0, 3).map(t => `<span>${t}</span>`).join("")}
       </div>
     </div>
   `;
 
-  grid.appendChild(card);
+  project.featured
+    ? featuredGrid.appendChild(card)
+    : moreGrid.appendChild(card);
 });
 
-/* Open modal */
+/* -----------------------------
+   TOGGLE MORE PROJECTS
+----------------------------- */
+
+toggleBtn.addEventListener("click", () => {
+  moreGrid.classList.toggle("collapsed");
+  toggleBtn.classList.toggle("open");
+
+  toggleBtn.querySelector("span").textContent =
+    moreGrid.classList.contains("collapsed")
+      ? "More projects"
+      : "Fewer projects";
+});
+
+/* -----------------------------
+   MODAL OPEN
+----------------------------- */
+
 function openPortfolio(id) {
   const p = portfolioProjects.find(x => x.id === id);
   if (!p) return;
 
   document.getElementById("modalTitle").textContent = p.title;
-  document.getElementById("modalDescription").textContent = p.modal.description;
- 
-  document.getElementById("modalCompany").href = p.modal.companyWebsite;
-  // document.getElementById("modalLinkedIn").href = p.modal.companyLinkedIn;
+  document.getElementById("modalDescription").textContent =
+    p.modal?.description || "";
 
-
+  const companyLink = document.getElementById("modalCompany");
+  if (p.modal?.companyWebsite) {
+    companyLink.href = p.modal.companyWebsite;
+    companyLink.style.display = "inline";
+  } else {
+    companyLink.style.display = "none";
+  }
 
   /* Images */
   const imgs = document.getElementById("modalImages");
   imgs.innerHTML = "";
-  p.modal.images.forEach(src => {
+  (p.modal?.images || []).forEach(src => {
     const img = document.createElement("img");
     img.src = src;
     img.loading = "lazy";
-    img.className = "modal-image";
     imgs.appendChild(img);
   });
 
   /* Bullets */
   const list = document.getElementById("modalList");
   list.innerHTML = "";
-  if (p.modal.bullets) {
-    p.modal.bullets.forEach(b => {
-      const li = document.createElement("li");
-      li.textContent = b;
-      list.appendChild(li);
-    });
-  }
+  (p.modal?.bullets || []).forEach(b => {
+    const li = document.createElement("li");
+    li.textContent = b;
+    list.appendChild(li);
+  });
 
   overlay.classList.add("active");
   document.body.style.overflow = "hidden";
 }
 
-/* Close modal */
+/* -----------------------------
+   MODAL CLOSE
+----------------------------- */
+
 function closePortfolio() {
   overlay.classList.remove("active");
   document.body.style.overflow = "";
 }
 
-/* Click outside closes */
 overlay.addEventListener("click", closePortfolio);
-
-/* Prevent inner clicks */
 modal.addEventListener("click", e => e.stopPropagation());
 
-/* ESC key */
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && overlay.classList.contains("active")) {
     closePortfolio();
