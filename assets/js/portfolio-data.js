@@ -51,7 +51,7 @@ const portfolioProjects = [
         "Vendor, production & validation support"
       ],
       caseStudyLink: "/projects/emotorad-mcu.html",
-      companyWebsite: "https://www.emotorad.com/",
+      companyWebsite: "projects/ebike_controller.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
