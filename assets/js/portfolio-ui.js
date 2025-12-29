@@ -22,7 +22,7 @@ portfolioProjects.forEach(p => {
       <h3>${p.title}</h3>
       <p>${p.shortDescription}</p>
       <div class="portfolio-tags">
-        ${p.tags.slice(0, 3).map(t => `<span>${t}</span>`).join("")}
+        ${p.tags.slice(0, 5).map(t => `<span>${t}</span>`).join("")}
       </div>
     </div>
   `;

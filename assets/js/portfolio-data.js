@@ -9,7 +9,7 @@ const portfolioProjects = [
     shortDescription:
       "Motion capture suit with integrated IMUs and haptic feedback for immersive VR experiences.",
 
-    tags: ["VR/XR", "Mo-Cap", "IMU", "Haptics"],
+    tags: ["VR/XR", "Mo-Cap", "IMUs", "Haptics"],
 
     modal: {
       images: [
@@ -37,7 +37,7 @@ const portfolioProjects = [
     thumbnail: "/projects/Files/SmartBike/B6.jpg",
     shortDescription:
       "Designed a complete motor controller PCB with powertrain control, Bluetooth connectivity, and AIS-004 compliance.",
-    tags: ["Motor Drive", "STM32", "BLE"],
+    tags: ["Motor Drive", "STM32", "BLE", "BLE"],
     modal: {
       images: [
         "/projects/Files/EMotorad/mcu.jpg"
@@ -124,7 +124,7 @@ const portfolioProjects = [
         "Inter-module CAN communication"
       ],
       caseStudyLink: "/projects/emotorad-cluster.html",
-      companyWebsite: "https://www.emotorad.com/",
+      companyWebsite: "/projects/TCU.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
