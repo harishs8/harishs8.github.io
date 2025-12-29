@@ -26,7 +26,7 @@ const portfolioProjects = [
         "EMI/EMC-aware layout"
       ],
       caseStudyLink: "/projects/rover.html",
-      companyWebsite: "/projects/blog_1.html",
+      companyWebsite: "/projects/holosuit.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
