@@ -89,4 +89,10 @@
 }
 
 
+@media (max-width: 768px) {
+  .expand-btn {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}
 
