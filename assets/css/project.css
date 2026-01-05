@@ -322,7 +322,34 @@ body.has-project-header {
 }
 
 
+.altium-3d-section {
+  margin: 3rem 0;
+}
 
+.viewer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.altium-ecad-viewer {
+  width: 100%;
+  max-width: 1280px;
+  height: 600px;
+
+  border-radius: 12px;
+  border: 1px solid #eee;
+  overflow: hidden;
+
+  background: #fff;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .altium-ecad-viewer {
+    height: 360px;
+  }
+}
 
 
 
