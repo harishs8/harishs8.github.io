@@ -7,23 +7,24 @@ const portfolioProjects = [
     title: "HoloSuit - Immersive Suit",
     thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
     shortDescription:
-      "Motion capture suit with integrated IMUs and haptic feedback for immersive VR experiences.",
+      "Motion capturing suit with full-body haptics for Sports and Adventure enthusiast to enhance experiences in VR/XR.",
 
-    tags: ["VR/XR", "Mo-Cap", "IMUs", "Haptics"],
+    tags: ["VR/XR", "Mo-Cap", "IMU", "Haptics"],
 
     modal: {
       images: [
         "/projects/Files/holosuittt3/sensors.png",
         "/projects/Files/holosuittt3/sensors123.png",
-        "/projects/Files/holosuittt3/test1.jpg"
+        
       ],
       description:
-        "Led electronics design and hardware engineering of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
+        "Led Electronics design and managed the complete product development of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions used for a variety of purpose, ranging from Sports, Entertainment and Gaming.",
       bullets: [
-        "4-layer PCB with split analog/digital grounds",
-        "STM32 + IMU sensor fusion",
-        "Motor driver thermal optimization",
-        "EMI/EMC-aware layout"
+        "4-layer PCB with split analog, digital and power grounds",
+        "RP2040 + IMU sensor fusion",
+        "Improved the motion capture FPS from 15FPS to 37FPS",
+        "Cross-functional collaboration with software, industrial design, and apparel teams",
+        "Improved Packaging and Integration of sensors & Haptics into the suit", 
       ],
       caseStudyLink: "/projects/rover.html",
       companyWebsite: "/projects/holosuit.html",
@@ -31,13 +32,13 @@ const portfolioProjects = [
     }
   },
   {
-    id: "1",
+    id: "E-Bike-Motor-Controller",
     title: "Smart Motor Controller – 250W E-Bike",
     featured: true,
     thumbnail: "/projects/Files/SmartBike/B6.jpg",
     shortDescription:
-      "Designed a complete motor controller PCB with powertrain control, Bluetooth connectivity, and AIS-004 compliance.",
-    tags: ["Motor Drive", "STM32", "BLE", "BLE"],
+      "250W BLDC motor controller based on NXP's S32Kxx MCU with integrated Connectivity features for Indian roads.  ",
+    tags: ["Motor Drive", "NXP", "BLE", "EMI/EMC"],
     modal: {
       images: [
         "/projects/Files/EMotorad/mcu.jpg"
