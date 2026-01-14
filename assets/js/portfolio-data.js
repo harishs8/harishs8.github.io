@@ -149,6 +149,7 @@ const portfolioProjects = [
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
+  
   //   {
   //   id: "6",
   //   featured: true,  // only for top 4
