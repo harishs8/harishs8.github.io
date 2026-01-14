@@ -180,6 +180,31 @@ const portfolioProjects = [
 //   }
 // },
 {
+  id: "6",
+  featured: true,
+  title: "Holosuit 3.0 – Full Body Motion Capture Suit",
+  thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
+  shortDescription:
+    "Full-body motion capture suit with integrated haptic feedback for immersive VR/XR experiences.",
+  tags: ["Motion Capture", "VR/XR", "Wearable Electronics", "Haptics"],
+  modal: {
+    images: [
+      "/projects/Files/holosuittt3/sensors.png"
+    ],
+    description:
+      "Led electronics design and comprehensive product development of Holosuit 3.0 — a full-body haptic and motion capture system for immersive VR/XR interactions.",
+    bullets: [
+      "Designed comprehensive electronics system with 40+ integrated sensors",
+      "Integrated harness solutions for functionality, aesthetics, and maintenance",
+      "Developed test jigs and stress-testing methodology for performance validation",
+      "Cross-functional collaboration with software, mechanical, industrial design, and apparel teams"
+    ],
+    caseStudyLink: "/projects/holosuit_3_0.html",
+    companyWebsite: "/projects/holosuit_3_0.html",
+    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+  }
+},
+{
   id: "7",
   title: "4-Wheeled Omni-Directional Research Robot",
   thumbnail: "/projects/Files/Holoworld/4wrobot.jpg",
@@ -198,8 +223,8 @@ const portfolioProjects = [
       "Seamless integration of controllers, sensors and drive system",
       "Supporting autonomous navigation capability development"
     ],
-    caseStudyLink: "/projects/research-robot.html",
-    companyWebsite: "https://holoworld.one/",
+    caseStudyLink: "/projects/research_robot.html",
+    companyWebsite: "/projects/research_robot.html",
     companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
   }
 },
@@ -215,16 +240,65 @@ const portfolioProjects = [
       "/projects/Files/Holoworld/exoskeleton.jpg"
     ],
     description:
-      "Supported design of an assistive lower-body exoskeleton for medical rehabilitation applications.",
+      "Contributed to design of an assistive lower-body exoskeleton for medical rehabilitation applications with comprehensive motor, control, and mechanical integration.",
     bullets: [
-      "Motor and actuator selection based on torque/biomechanics requirements",
-      "Hardware integration and sensor interfacing",
-      "Design of wiring harness and mounting solutions",
-      "Contributed to early testing and evaluation cycles"
+      "Motor and actuator selection based on torque and biomechanics requirements",
+      "Control electronics integration and sensor interfacing",
+      "Design of wiring harness and mechanical mounting solutions",
+      "Contributed to testing and evaluation cycles for clinical validation"
     ],
     caseStudyLink: "/projects/exoskeleton.html",
-    companyWebsite: "https://holoworld.one/",
+    companyWebsite: "/projects/exoskeleton.html",
     companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+  }
+},
+{
+  id: "9",
+  title: "Holosuit 1.7 – Project Management & Production",
+  thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
+  shortDescription:
+    "Product management and manufacturing oversight ensuring quality and timely delivery.",
+  tags: ["Project Management", "Production", "Quality Assurance", "Customer Delivery"],
+  modal: {
+    images: [
+      "/projects/Files/holosuittt3/holosuitdisplay.png"
+    ],
+    description:
+      "Managed Holosuit 1.7 product line overseeing manufacturing, quality assurance, and customer delivery while resolving critical reliability and connectivity issues.",
+    bullets: [
+      "Resolved reliability and connectivity issues improving performance and user experience",
+      "Oversaw manufacturing processes ensuring timely delivery to customers",
+      "Implemented process improvements enhancing usability and convenience",
+      "Awarded HoloStar for pivotal role in product success and team leadership"
+    ],
+    caseStudyLink: "/projects/holosuit_1_7.html",
+    companyWebsite: "/projects/holosuit_1_7.html",
+    companyLinkedIn: "https://www.linkedin.com/company/holoworldtech/"
+  }
+},
+{
+  id: "10",
+  title: "BAJA SAE – All Terrain Vehicle | Electrical Lead",
+  thumbnail: "/projects/Files/baja_vehicle.jpg",
+  shortDescription:
+    "Electrical systems lead for SAE competition ATV with 35% weight reduction and 8th place cost ranking.",
+  tags: ["Electrical Systems", "Team Leadership", "Data Acquisition", "Vehicle Testing"],
+  modal: {
+    images: [
+      "/projects/Files/baja_vehicle.jpg"
+    ],
+    description:
+      "Led electrical systems team for BAJA SAE All Terrain Vehicle competition entry, achieving 21st overall and 8th cost ranking among 100+ schools through data-driven optimization.",
+    bullets: [
+      "Led 4-person electrical engineering team over 28-month development cycle",
+      "Implemented NI cDAQ, Arduino, and MATLAB-based data acquisition and analysis",
+      "Achieved 35% weight reduction and 25% parts reduction through optimization",
+      "Managed relationships with 20+ sponsors ensuring resource availability",
+      "Secured competitive rankings at BAJA SAE Arizona 2020"
+    ],
+    caseStudyLink: "/projects/baja_sae.html",
+    companyWebsite: "/projects/baja_sae.html",
+    companyLinkedIn: "https://www.sae.org/"
   }
 }
 
