@@ -1,9 +1,23 @@
+/* ========================================
+   BASE STYLES - Foundation for entire site
+   ======================================== */
+
+/* RESET & BOX MODEL
+   - Remove default margins/padding from all elements
+   - Use border-box so padding/border count toward width/height
+   - Makes layout calculations easier and more intuitive */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* BODY - Main page container
+   - No margins (starts at edge of viewport)
+   - Font: Inter (clean, modern typeface)
+   - Text color: dark gray (#111) for good readability
+   - Background: white for clean look
+   - Line height: 1.65 (spacious text, easier to read) */
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -12,19 +26,46 @@ body {
   line-height: 1.65;
 }
 
-/* Centered content */
+/* WRAPPER - Constrains content to max width
+   - max-width: 760px - Content doesn't stretch too wide
+   - margin: 96px auto - Centers content with top padding
+   - padding: 0 24px - Left/right padding on mobile
+   - auto margin horizontally centers the div */
 .wrapper {
   max-width: 760px;
   margin: 96px auto 80px;
   padding: 0 24px;
 }
 
+/* SECTIONS - Spacing between major content blocks
+   - margin-bottom: 72px - Large gaps between sections */
 section {
   margin-bottom: 72px;
 }
 
-h1 { font-size: 32px; font-weight: 400; margin-bottom: 8px; }
-h2 { font-size: 22px; font-weight: 300; margin-bottom: 16px; }
+/* HEADINGS - Typography hierarchy
+   - h1: 32px, light weight (400) - Main page title
+   - h2: 22px, lighter weight (300) - Section titles
+   - Margins control spacing around text */
+h1 { 
+  font-size: 32px; 
+  font-weight: 400; 
+  margin-bottom: 8px; 
+}
 
-.muted { color: #555; }
-.justify { text-align: justify; }
+h2 { 
+  font-size: 22px; 
+  font-weight: 300; 
+  margin-bottom: 16px; 
+}
+
+/* UTILITY CLASSES
+   - .muted = gray text (#555) for secondary info
+   - .justify = text spread edge-to-edge (formal look) */
+.muted { 
+  color: #555; 
+}
+
+.justify { 
+  text-align: justify; 
+}
