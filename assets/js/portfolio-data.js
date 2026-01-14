@@ -51,8 +51,8 @@ const portfolioProjects = [
         "AIS-004 Part-3 compliance testing",
         "Vendor, production & validation support"
       ],
-      caseStudyLink: "/projects/emotorad-mcu.html",
-      companyWebsite: "projects/ebike_controller.html",
+      caseStudyLink: "/projects/ebike_controller.html",
+      companyWebsite: "/projects/ebike_controller.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
@@ -76,8 +76,8 @@ const portfolioProjects = [
         "Trip analytics, location tracking, SOS alerts",
         "Designed under consumer-grade power constraints"
       ],
-      caseStudyLink: "/projects/emotorad-display.html",
-      companyWebsite: "https://www.emotorad.com/",
+      caseStudyLink: "/projects/ebike_display.html",
+      companyWebsite: "/projects/ebike_display.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
@@ -100,8 +100,8 @@ const portfolioProjects = [
         "EMI/EMC-aware PCB layout",
         "SOC/SOH monitoring with lifecycle protection"
       ],
-      caseStudyLink: "/projects/emotorad-bms48.html",
-      companyWebsite: "https://www.emotorad.com/",
+      caseStudyLink: "/projects/bms_48v.html",
+      companyWebsite: "/projects/bms_48v.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
@@ -124,7 +124,7 @@ const portfolioProjects = [
         "Scalable architecture for future product family",
         "Inter-module CAN communication"
       ],
-      caseStudyLink: "/projects/emotorad-cluster.html",
+      caseStudyLink: "/projects/TCU.html",
       companyWebsite: "/projects/TCU.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
@@ -148,8 +148,8 @@ const portfolioProjects = [
         "Optimized for range, battery life & safety",
         "Supports firmware-based smart features"
       ],
-      caseStudyLink: "/projects/emotorad-bms-intelligent.html",
-      companyWebsite: "https://www.emotorad.com/",
+      caseStudyLink: "/projects/bms_intelligent.html",
+      companyWebsite: "/projects/bms_intelligent.html",
       companyLinkedIn: "https://www.linkedin.com/company/emotorad/"
     }
   },
