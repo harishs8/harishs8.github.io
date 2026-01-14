@@ -331,18 +331,7 @@ nav a:hover {
   margin-bottom: 4px;
 }
 
-.exp-body {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.25s ease;
-}
-
-.exp-card.active .exp-body {
-  max-height: 800px;
-  opacity: 1;
-  margin-top: 16px;
-}
+/* NOTE: .exp-body styling is above under "EXPERIENCE - EXPANDABLE CARDS" section */
 
 
 
