@@ -568,19 +568,19 @@
         
         <div class="contact-card">
           <div class="contact-methods">
-            <a href="mailto:harishkumaarm@gmail.com" class="contact-link">
+            <a href="mailto:hk@harishkumaar.in" class="contact-link">
               <span class="contact-icon">✉</span>
               <div>
                 <div class="contact-label">Email</div>
-                <div class="contact-value">harishkumaarm@gmail.com</div>
+                <div class="contact-value">hk@harishkumaar.in</div>
               </div>
             </a>
             
-            <a href="https://www.linkedin.com/in/harishkumaar/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <a href="https://www.linkedin.com/in/harishkumaarm/" target="_blank" rel="noopener noreferrer" class="contact-link">
               <span class="contact-icon">in</span>
               <div>
                 <div class="contact-label">LinkedIn</div>
-                <div class="contact-value">harishkumaar</div>
+                <div class="contact-value">harishkumaarm</div>
               </div>
             </a>
             
@@ -592,16 +592,40 @@
               </div>
             </a>
             
-            <a href="tel:+31617161213" class="contact-link">
+            <button class="contact-link phone-request-btn" onclick="openPhoneForm()">
               <span class="contact-icon">☎</span>
               <div>
                 <div class="contact-label">Phone</div>
-                <div class="contact-value">+31 617161213</div>
+                <div class="contact-value">Request Access</div>
               </div>
-            </a>
+            </button>
           </div>
         </div>
       </section>
+
+      <!-- Phone Access Modal -->
+      <div id="phoneModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" onclick="closePhoneForm()">&times;</span>
+          <h3>Request Phone Number</h3>
+          <form id="phoneForm" onsubmit="handlePhoneRequest(event)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">Send Request</button>
+          </form>
+          <div id="formMessage" class="form-message"></div>
+        </div>
+      </div>
 
       <!-- </div>
   <div class="viewer-container">
