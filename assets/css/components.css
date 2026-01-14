@@ -397,6 +397,14 @@ nav a:hover {
    CONTACT SECTION
 ========================= */
 
+/* =========================
+   CONTACT SECTION STYLES
+   ========================= */
+
+/**
+ * Contact card - Container for all contact tiles
+ * Makes the background transparent so only tiles show
+ */
 .contact-card {
   background: transparent;
   border: none;
@@ -405,52 +413,77 @@ nav a:hover {
   margin-top: 24px;
 }
 
+/**
+ * Contact methods grid - Creates 2x2 layout on desktop
+ * Auto-fits tiles to fill available space
+ * Each tile is minimum 240px wide
+ */
 .contact-methods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
+/**
+ * Contact link tiles - Email, LinkedIn, Website
+ * These are clickable tiles that link to contact info
+ */
 .contact-link {
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 16px;
-  background: #fafafa;
-  border: 1px solid #e6e6e6;
+  background: #fafafa;          /* Light gray background */
+  border: 1px solid #e6e6e6;    /* Subtle gray border */
   border-radius: 6px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease;    /* Smooth hover animation */
 }
 
+/**
+ * Contact link hover effect
+ * Tile rises slightly and border darkens when mouse over
+ */
 .contact-link:hover {
-  border-color: #ccc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  border-color: #ccc;           /* Darker border on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* Subtle shadow */
+  transform: translateY(-2px);  /* Slight lift effect */
 }
 
+/**
+ * Contact icon - The emoji/symbol (✉, in, 🌐, etc)
+ * Sits inside a small gray box
+ */
 .contact-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: #efefef;
+  background: #efefef;          /* Medium gray box */
   border-radius: 6px;
   font-size: 18px;
   font-weight: 600;
-  color: #777;
-  flex-shrink: 0;
+  color: #777;                  /* Dark gray text */
+  flex-shrink: 0;               /* Prevents squishing */
 }
 
+/**
+ * Contact label - "EMAIL", "LINKEDIN", etc
+ * Small uppercase text above the contact value
+ */
 .contact-label {
   font-size: 11px;
   color: #777;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-transform: uppercase;    /* Makes text all caps */
+  letter-spacing: 0.5px;        /* Spreads out letters */
   font-weight: 600;
 }
 
+/**
+ * Contact value - The actual contact info (email address, etc)
+ * Larger text below the label
+ */
 .contact-value {
   font-size: 14px;
   color: #111;
@@ -458,7 +491,10 @@ nav a:hover {
   margin-top: 2px;
 }
 
-/* Phone Request Button */
+/**
+ * Phone request button - Same style as contact tiles
+ * Button instead of link because it opens a form
+ */
 .phone-request-btn {
   background: #fafafa;
   border: 1px solid #e6e6e6;
@@ -473,7 +509,7 @@ nav a:hover {
   font-size: inherit;
   color: inherit;
   cursor: pointer;
-  text-align: left;
+  text-align: left;             /* Align text to the left */
 }
 
 .phone-request-btn:hover {
@@ -482,43 +518,66 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Modal Styles */
+/* =========================
+   PHONE REQUEST MODAL
+   ========================= */
+
+/**
+ * Modal - The popup form background
+ * Creates a dark overlay that covers the entire screen
+ */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
+  display: none;                    /* Hidden by default */
+  position: fixed;                  /* Stays in place while scrolling */
+  z-index: 1000;                    /* Appears above everything else */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black */
+  animation: fadeIn 0.3s ease;      /* Fade in effect */
 }
 
+/**
+ * Modal.active - Shows the modal
+ * When JavaScript adds "active" class, modal becomes visible
+ */
 .modal.active {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;              /* Centers form vertically */
+  justify-content: center;          /* Centers form horizontally */
 }
 
+/**
+ * Fade-in animation
+ * Makes modal gradually appear instead of popping up instantly
+ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/**
+ * Modal content - The form box
+ * White box that appears in the center with form inputs
+ */
 .modal-content {
   background-color: #fff;
   padding: 32px;
   border-radius: 12px;
   max-width: 450px;
-  width: 90%;
+  width: 90%;                       /* Takes 90% of screen on mobile */
   max-height: 90vh;
-  overflow-y: auto;
+  overflow-y: auto;                 /* Scroll if form is too tall */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   position: relative;
-  animation: slideUp 0.3s ease;
+  animation: slideUp 0.3s ease;     /* Slide up effect */
 }
 
+/**
+ * Slide-up animation
+ * Form slides up from bottom instead of appearing instantly
+ */
 @keyframes slideUp {
   from {
     transform: translateY(30px);
@@ -530,6 +589,10 @@ nav a:hover {
   }
 }
 
+/**
+ * Close button (X) - Top right corner of form
+ * Click this to close the modal
+ */
 .modal-close {
   position: absolute;
   right: 16px;
@@ -543,9 +606,13 @@ nav a:hover {
 }
 
 .modal-close:hover {
-  color: #111;
+  color: #111;                      /* Darkens on hover */
 }
 
+/**
+ * Form heading - "Request Phone Number"
+ * Title text inside the modal
+ */
 .modal-content h3 {
   margin: 0 0 24px 0;
   font-size: 20px;
@@ -553,10 +620,18 @@ nav a:hover {
   color: #111;
 }
 
+/**
+ * Form group - Each input field container
+ * Wraps label and input together
+ */
 .form-group {
   margin-bottom: 18px;
 }
 
+/**
+ * Form label - "Name", "Email", "Message"
+ * Labels above input fields
+ */
 .form-group label {
   display: block;
   font-size: 13px;
@@ -567,9 +642,13 @@ nav a:hover {
   letter-spacing: 0.3px;
 }
 
+/**
+ * Form inputs - Text boxes and textarea
+ * Where user types their name, email, and message
+ */
 .form-group input,
 .form-group textarea {
-  width: 100%;
+  width: 100%;                      /* Takes full width */
   padding: 10px 12px;
   font-size: 14px;
   border: 1px solid #e6e6e6;
@@ -578,6 +657,10 @@ nav a:hover {
   transition: border-color 0.2s ease;
 }
 
+/**
+ * Form input focus - When user clicks in a field
+ * Border darkens and subtle shadow appears
+ */
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
@@ -585,13 +668,17 @@ nav a:hover {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
+/**
+ * Submit button - "Send Request"
+ * Black button at bottom of form
+ */
 .form-submit-btn {
   width: 100%;
   padding: 12px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 600;
-  background: #111;
+  background: #111;                /* Black button */
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -599,32 +686,48 @@ nav a:hover {
   transition: all 0.2s ease;
 }
 
+/**
+ * Submit button hover
+ * Darkens on hover and lifts slightly
+ */
 .form-submit-btn:hover {
-  background: #333;
-  transform: translateY(-1px);
+  background: #333;                /* Darker black on hover */
+  transform: translateY(-1px);     /* Slight lift */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/**
+ * Form message - Success or error text
+ * Hidden by default, shown when form is submitted
+ */
 .form-message {
   margin-top: 12px;
   padding: 12px;
   border-radius: 6px;
   font-size: 13px;
   text-align: center;
-  display: none;
+  display: none;                    /* Hidden by default */
 }
 
+/**
+ * Success message - Green color
+ * Shows when form submits successfully
+ */
 .form-message.success {
   display: block;
-  background: #d4edda;
-  color: #155724;
+  background: #d4edda;              /* Light green */
+  color: #155724;                   /* Dark green text */
   border: 1px solid #c3e6cb;
 }
 
+/**
+ * Error message - Red color
+ * Shows when form submission fails
+ */
 .form-message.error {
   display: block;
-  background: #f8d7da;
-  color: #721c24;
+  background: #f8d7da;              /* Light red */
+  color: #721c24;                   /* Dark red text */
   border: 1px solid #f5c6cb;
 }
 

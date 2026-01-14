@@ -1,3 +1,28 @@
+/**
+ * ============================================
+ * PORTFOLIO WEBSITE - MAIN JAVASCRIPT
+ * ============================================
+ * This file handles all interactive features:
+ * 1. Experience cards - expand/collapse functionality
+ * 2. Phone contact form - modal popup and form submission
+ */
+
+// ============================================
+// EXPERIENCE CARD TOGGLE FUNCTIONALITY
+// ============================================
+/**
+ * toggleCard() - Opens/closes experience card details
+ * When user clicks an experience card, this function:
+ * - Closes any other open card (only one open at a time)
+ * - Toggles the clicked card open/closed
+ * 
+ * How it works:
+ * - Find all experience cards on the page
+ * - Remove "active" class from all cards (closes them)
+ * - Add "active" class to the clicked card (opens it)
+ * 
+ * @param {HTMLElement} clickedCard - The card element that was clicked
+ */
 function toggleCard(clickedCard) {
   const cards = document.querySelectorAll(".exp-card");
 
@@ -10,33 +35,56 @@ function toggleCard(clickedCard) {
   clickedCard.classList.toggle("active");
 }
 
-// Phone Form Modal Functions
+// ============================================
+// PHONE REQUEST FORM - MODAL FUNCTIONS
+// ============================================
+/**
+ * openPhoneForm() - Opens the phone contact form modal
+ * Shows the form popup and prevents scrolling in background
+ */
 function openPhoneForm() {
   const modal = document.getElementById("phoneModal");
   modal.classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden"; // Prevent background scrolling
 }
 
+/**
+ * closePhoneForm() - Closes the phone contact form modal
+ * Hides the form, restores scrolling, and clears the form fields
+ */
 function closePhoneForm() {
   const modal = document.getElementById("phoneModal");
   modal.classList.remove("active");
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = "auto"; // Restore scrolling
   
-  // Reset form
+  // Clear form inputs and messages
   document.getElementById("phoneForm").reset();
   document.getElementById("formMessage").textContent = "";
   document.getElementById("formMessage").className = "form-message";
 }
 
+/**
+ * handlePhoneRequest() - Submits the phone request form to Formspree
+ * Validates form input and sends data to email via Formspree API
+ * 
+ * How it works:
+ * 1. Get user's input (name, email, optional message)
+ * 2. Send to Formspree service (formspree.io)
+ * 3. Show success or error message
+ * 4. Auto-close form after 2 seconds if successful
+ * 
+ * @param {Event} event - Form submission event
+ */
 function handlePhoneRequest(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent page from reloading
   
+  // Get user input from form
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
   const formMessage = document.getElementById("formMessage");
   
-  // Prepare email data
+  // Prepare data to send
   const emailData = {
     name: name,
     email: email,
@@ -44,7 +92,7 @@ function handlePhoneRequest(event) {
     requestType: "phone_access_request"
   };
   
-  // Send to FormSubmit.co (free service)
+  // Send form data to Formspree (email service)
   fetch('https://formspree.io/f/meeeoalv', {
     method: 'POST',
     headers: {
@@ -54,9 +102,12 @@ function handlePhoneRequest(event) {
   })
   .then(response => {
     if (response.ok) {
+      // Success - show confirmation message
       formMessage.textContent = "✓ Request sent successfully! I'll contact you soon.";
       formMessage.className = "form-message success";
       document.getElementById("phoneForm").reset();
+      
+      // Close form after 2 seconds
       setTimeout(() => {
         closePhoneForm();
       }, 2000);
@@ -65,13 +116,20 @@ function handlePhoneRequest(event) {
     }
   })
   .catch(error => {
+    // Error - show error message
     formMessage.textContent = "✗ Error sending request. Please try again.";
     formMessage.className = "form-message error";
     console.error('Error:', error);
   });
 }
 
-// Close modal when clicking outside of it
+// ============================================
+// MODAL CLOSE TRIGGERS
+// ============================================
+/**
+ * Close modal when clicking outside the form
+ * If user clicks the dark background area, close the modal
+ */
 window.addEventListener("click", function(event) {
   const modal = document.getElementById("phoneModal");
   if (event.target === modal) {
@@ -79,7 +137,10 @@ window.addEventListener("click", function(event) {
   }
 });
 
-// Close modal with Escape key
+/**
+ * Close modal when pressing Escape key
+ * Provides keyboard shortcut to close the modal
+ */
 document.addEventListener("keydown", function(event) {
   if (event.key === "Escape") {
     const modal = document.getElementById("phoneModal");
