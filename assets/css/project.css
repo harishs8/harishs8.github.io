@@ -351,7 +351,19 @@ body.has-project-header {
   }
 }
 
+/* UPDATED FIXED CODE */
+.project-figure {
+  width: 100%;
+  margin: 48px 0;
+}
 
+.project-figure img {
+  display: block;
+  width: 100%;       /* Forces it to fill the 760px wrapper */
+  max-width: 100%;   /* Ensures it scales down on mobile */
+  height: auto;      /* Maintains your 1291x726 aspect ratio */
+  border-radius: 12px;
+}
 
 
 
