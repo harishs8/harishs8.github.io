@@ -167,6 +167,18 @@
 
 
 
+/* ================================
+   UNRESTRICTED SINGLE PROJECT IMAGE
+   ================================ */
+
+/* ================================
+   UNRESTRICTED SINGLE PROJECT IMAGE
+   ================================ */
+
+/* ================================
+   UNRESTRICTED SINGLE PROJECT IMAGE
+   ================================ */
+
 
 
 
@@ -241,3 +253,33 @@
   display: none;
 }
 
+
+
+
+/* ================================
+   SINGLE FULL-WIDTH PROJECT IMAGE
+   ================================ */
+
+/* ================================
+   SINGLE PROJECT FIGURE (FULL WIDTH)
+   ================================ */
+
+/* ================================
+   FORCE FULL-WIDTH IMAGE AFTER GALLERY
+   ================================ */
+
+/* Update this section in portfolio.css */
+/* Ensure the figure takes up the full width of the wrapper (760px) */
+/* UPDATED FIXED CODE */
+.project-figure {
+  width: 100%;
+  margin: 48px 0;
+}
+
+.project-figure img {
+  display: block;
+  width: 100%;       /* Forces it to fill the 760px wrapper */
+  max-width: 100%;   /* Ensures it scales down on mobile */
+  height: auto;      /* Maintains your 1291x726 aspect ratio */
+  border-radius: 12px;
+}
