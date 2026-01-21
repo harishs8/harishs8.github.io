@@ -23,9 +23,13 @@ const modal = document.querySelector(".portfolio-modal");
  * ============================================
  * Loop through portfolioProjects array (from portfolio-data.js)
  * For each project, create a clickable card with image and info
- * Featured projects go to top grid, others go to hidden grid below
+ * visible: false projects are completely hidden
+ * featured: true projects go to top grid, false goes to "Show more" section
  */
 portfolioProjects.forEach(p => {
+  // Skip projects that are not visible
+  if (!p.visible) return;
+
   const card = document.createElement("div");
   card.className = "portfolio-card";
   // When clicked, open the modal for this project

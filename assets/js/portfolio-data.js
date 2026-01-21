@@ -4,6 +4,7 @@ const portfolioProjects = [
   {
     id: "6",
     featured: true,
+    visible: true,
     title: "Holosuit 3.0 – Full Body Immersive Suit",
     thumbnail: "projects/Files/HoloWorld/holosuit_3_0/images/holosuitdisplay.png",
     shortDescription:
@@ -31,6 +32,7 @@ const portfolioProjects = [
     id: "E-Bike-Motor-Controller",
     title: "Smart Motor Controller – 250W E-Bike",
     featured: true,
+    visible: true,
     thumbnail: "/projects/Files/SmartBike/B6.jpg",
     shortDescription:
       "250W BLDC motor controller based on NXP's S32Kxx MCU with integrated Connectivity features for Indian roads.  ",
@@ -56,6 +58,8 @@ const portfolioProjects = [
   {
     id: "2",
     title: "Connected Display Module – E-Bike",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/EMotorad/display.jpg",
     shortDescription:
       "LTE-enabled TFT dashboard with GNSS for real-time trip data and SOS alerts.",
@@ -80,6 +84,8 @@ const portfolioProjects = [
   {
     id: "3",
     title: "48V BMS – Electric Two-Wheeler",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/EMotorad/bms48.jpg",
     shortDescription:
       "Architecture & hardware design of 48V BMS using NXP MCU and AFE with EMI-safe power routing.",
@@ -104,6 +110,8 @@ const portfolioProjects = [
   {
     id: "4",
     title: "Instrument Cluster – Body Control & Telematics",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/EMotorad/cluster.jpg",
     shortDescription:
       "Stackable TCU + BCM system with touch display, voltage protection and telematics.",
@@ -128,6 +136,8 @@ const portfolioProjects = [
   {
     id: "5",
     title: "Intelligent BMS – 36V/48V Architecture",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/EMotorad/bms-intelligent.jpg",
     shortDescription:
       "Next-gen smart BMS supporting both NMC & LFP chemistries using TI AFE and NXP MCU.",
@@ -180,6 +190,8 @@ const portfolioProjects = [
   {
     id: "7",
     title: "4-Wheeled Omni-Directional Research Robot",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/Holoworld/4wrobot.jpg",
     shortDescription:
       "Research robot platform with autonomous navigation, power management and hardware integration.",
@@ -204,6 +216,8 @@ const portfolioProjects = [
   {
     id: "8",
     title: "Lower-Body Exoskeleton – Rehabilitation System",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/Holoworld/exoskeleton.jpg",
     shortDescription:
       "Assistive powered exoskeleton enabling guided rehabilitation and gait support.",
@@ -228,6 +242,8 @@ const portfolioProjects = [
   {
     id: "9",
     title: "Holosuit 1.7 – Project Management & Production",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/holosuittt3/holosuitdisplay.png",
     shortDescription:
       "Product management and manufacturing oversight ensuring quality and timely delivery.",
@@ -252,6 +268,8 @@ const portfolioProjects = [
   {
     id: "10",
     title: "BAJA SAE – All Terrain Vehicle | Electrical Lead",
+    featured: false,
+    visible: false,
     thumbnail: "/projects/Files/baja_vehicle.jpg",
     shortDescription:
       "Electrical systems lead for SAE competition ATV with 35% weight reduction and 8th place cost ranking.",
