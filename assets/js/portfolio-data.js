@@ -39,7 +39,8 @@ const portfolioProjects = [
     tags: ["Motor Drive", "NXP", "BLE", "EMI/EMC"],
     modal: {
       images: [
-        "/projects/Files/EMotorad/mcu.jpg"
+        "/projects/Files/SmartBike/2.png",
+        "/projects/Files/SmartBike/1.jpg"
       ],
       description:
         "Lead hardware design for a 250W brushless DC motor controller enabling power-efficient drive control and wireless connectivity.",
@@ -59,7 +60,7 @@ const portfolioProjects = [
     id: "2",
     title: "Connected Display Module – E-Bike",
     featured: false,
-    visible: false,
+    visible: true,
     thumbnail: "/projects/Files/EMotorad/display.jpg",
     shortDescription:
       "LTE-enabled TFT dashboard with GNSS for real-time trip data and SOS alerts.",
