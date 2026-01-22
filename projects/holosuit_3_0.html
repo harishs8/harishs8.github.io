@@ -8,6 +8,20 @@
 
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/project.css">
+  
+  <!-- Google Model Viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+  <style>
+    model-viewer {
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      margin: 2rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+      --poster-color: #ffffff;
+    }
+  </style>
 </head>
 
 <body class="has-project-header">
@@ -329,6 +343,26 @@
             </section>
 
           </section>
+
+    <!-- 3D MODEL VIEWER (GLB) -->
+    <section class="project-section">
+      <h2>Interactive 3D Model</h2>
+      <p>Rotate, zoom, and explore the 3D model. Use your mouse to interact with the model below.</p>
+      <model-viewer 
+        src="/stepfile/holosuit/Holosuit_V1I2_Main.glb"
+        alt="Holosuit 3.0 3D Model"
+        auto-rotate
+        camera-controls
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        exposure="1.5"
+        tone-mapping="aces"
+        shadow-intensity="1">
+      </model-viewer>
+      <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+        <em>Interactive 3D visualization. Support for AR viewing on compatible devices.</em>
+      </p>
+    </section>
 
     <!-- 3D CAD MODEL -->
     <section class="project-section">
