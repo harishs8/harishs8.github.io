@@ -8,11 +8,6 @@
 
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/project.css">
-  <link rel="stylesheet" href="../assets/css/viewer.css">
-
-  <!-- Three.js core + controls for 3D viewer -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 
 <body class="has-project-header">
@@ -334,33 +329,6 @@
             </section>
 
           </section>
-
-          <!-- 3D STEP VIEWER -->
-          <section class="project-section">
-            <h2>3D Model Viewer (STEP)</h2>
-            <p>Use the controls to rotate, zoom, and pan the STEP model.</p>
-            <div class="viewer-container" id="stepViewer"></div>
-            <div class="viewer-controls">
-              <button class="viewer-btn" onclick="viewer.toggleAutoRotate()">Auto-Rotate</button>
-              <button class="viewer-btn" onclick="viewer.resetView()">Reset View</button>
-            </div>
-            <div class="viewer-info">
-              <strong>Controls</strong>
-              <ul>
-                <li>Drag to rotate</li>
-                <li>Scroll to zoom</li>
-                <li>Right-click to pan</li>
-              </ul>
-            </div>
-          </section>
-
-          <script src="../assets/js/step-viewer.js"></script>
-          <script>
-            // Update the path below to any STEP file you want to display
-            const viewer = new STEPViewer('stepViewer', '/projects/Files/SmartBike/gen127.step');
-          </script>
-      
-
 
     <!-- 3D CAD MODEL -->
     <section class="project-section">
