@@ -411,6 +411,17 @@ nav a:hover {
   text-underline-offset: 4px;
 }
 
+.exp-footer-right .footer-label {
+  font-size: 13px;
+  color: #555;
+}
+
+.exp-footer-right .footer-label + .footer-label::before {
+  content: " ";
+  margin: 0 12px;
+  color: #bbb;
+}
+
 /* =========================
    CONTACT SECTION
 ========================= */
