@@ -1,39 +1,10 @@
 /**
  * ============================================
- * PORTFOLIO WEBSITE - MAIN JAVASCRIPT
+ * PHONE REQUEST FORM (contact.html)
  * ============================================
- * This file handles all interactive features:
- * 1. Experience cards - expand/collapse functionality
- * 2. Phone contact form - modal popup and form submission
+ * Opens the "Request phone number" popup and sends the request
+ * to Formspree, which emails it to you.
  */
-
-// ============================================
-// EXPERIENCE CARD TOGGLE FUNCTIONALITY
-// ============================================
-/**
- * toggleCard() - Opens/closes experience card details
- * When user clicks an experience card, this function:
- * - Closes any other open card (only one open at a time)
- * - Toggles the clicked card open/closed
- * 
- * How it works:
- * - Find all experience cards on the page
- * - Remove "active" class from all cards (closes them)
- * - Add "active" class to the clicked card (opens it)
- * 
- * @param {HTMLElement} clickedCard - The card element that was clicked
- */
-function toggleCard(clickedCard) {
-  const cards = document.querySelectorAll(".exp-card");
-
-  cards.forEach(card => {
-    if (card !== clickedCard) {
-      card.classList.remove("active");
-    }
-  });
-
-  clickedCard.classList.toggle("active");
-}
 
 // ============================================
 // PHONE REQUEST FORM - MODAL FUNCTIONS

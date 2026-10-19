@@ -3,6 +3,8 @@
 const portfolioProjects = [
   {
     id: "6",
+    category: "Wearables & XR",
+    company: "HoloWorld",
     featured: true,
     visible: true,
     title: "Holosuit 3.0 – Full Body Immersive Suit",
@@ -30,6 +32,8 @@ const portfolioProjects = [
   },
   {
     id: "E-Bike-Motor-Controller",
+    category: "E-Mobility",
+    company: "EMotorad",
     title: "Smart Motor Controller – 250W E-Bike",
     featured: true,
     visible: true,
@@ -58,6 +62,8 @@ const portfolioProjects = [
 
   {
     id: "2",
+    category: "E-Mobility",
+    company: "EMotorad",
     title: "Connected Display Module – E-Bike",
     featured: false,
     visible: true,
@@ -84,9 +90,11 @@ const portfolioProjects = [
   },
   {
     id: "3",
+    category: "Battery Systems",
+    company: "EMotorad",
     title: "48V BMS – Electric Two-Wheeler",
     featured: false,
-    visible: false,
+    visible: true,
     thumbnail: "/projects/Files/EMotorad/bms48.jpg",
     shortDescription:
       "Architecture & hardware design of 48V BMS using NXP MCU and AFE with EMI-safe power routing.",
@@ -110,6 +118,8 @@ const portfolioProjects = [
   },
   {
     id: "4",
+    category: "E-Mobility",
+    company: "EMotorad",
     title: "Instrument Cluster – Body Control & Telematics",
     featured: false,
     visible: false,
@@ -136,6 +146,8 @@ const portfolioProjects = [
   },
   {
     id: "5",
+    category: "Battery Systems",
+    company: "EMotorad",
     title: "Intelligent BMS – 36V/48V Architecture",
     featured: false,
     visible: false,
@@ -190,9 +202,11 @@ const portfolioProjects = [
 
   {
     id: "7",
+    category: "Robotics",
+    company: "HoloWorld",
     title: "4-Wheeled Omni-Directional Research Robot",
     featured: false,
-    visible: false,
+    visible: true,
     thumbnail: "/projects/Files/Holoworld/4wrobot.jpg",
     shortDescription:
       "Research robot platform with autonomous navigation, power management and hardware integration.",
@@ -216,6 +230,8 @@ const portfolioProjects = [
   },
   {
     id: "8",
+    category: "Robotics",
+    company: "HoloWorld",
     title: "Lower-Body Exoskeleton – Rehabilitation System",
     featured: false,
     visible: false,
@@ -242,6 +258,8 @@ const portfolioProjects = [
   },
   {
     id: "9",
+    category: "Wearables & XR",
+    company: "HoloWorld",
     title: "Holosuit 1.7 – Project Management & Production",
     featured: false,
     visible: false,
@@ -268,6 +286,8 @@ const portfolioProjects = [
   },
   {
     id: "10",
+    category: "Automotive",
+    company: "SAEGCT",
     title: "BAJA SAE – All Terrain Vehicle | Electrical Lead",
     featured: false,
     visible: false,

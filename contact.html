@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Harishkumaar</title>
+  <meta name="description" content="Get in touch with Harishkumaar, hardware design engineer in Rotterdam — email, LinkedIn or request a phone number." />
+  <meta name="theme-color" content="#08080a" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/board-bg.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="ref">P5 · Contact</div>
+        <h1>Let’s talk hardware</h1>
+        <p class="lead">
+          Whether it’s a BMS, a motor controller or a connected device, I’m happy to talk architecture,
+          design reviews or full hardware development. Email is the fastest way to reach me.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:12px">
+      <div class="container">
+        <div class="contact-panel panel reveal">
+          <div>
+            <div class="ref">Reach me</div>
+            <h2>hk@harishkumaar.in</h2>
+            <p>Based in Rotterdam, the Netherlands.</p>
+          </div>
+
+          <div class="contact-methods">
+            <a href="mailto:hk@harishkumaar.in" class="contact-link">
+              <span class="contact-icon">✉</span>
+              <div><div class="contact-label">Email</div><div class="contact-value">hk@harishkumaar.in</div></div>
+            </a>
+            <a href="https://www.linkedin.com/in/harishkumaarm/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-icon">in</span>
+              <div><div class="contact-label">LinkedIn</div><div class="contact-value">harishkumaarm</div></div>
+            </a>
+            <a href="https://harishkumaar.in" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-icon">⌁</span>
+              <div><div class="contact-label">Website</div><div class="contact-value">harishkumaar.in</div></div>
+            </a>
+            <button type="button" class="contact-link" onclick="openPhoneForm()">
+              <span class="contact-icon">☎</span>
+              <div><div class="contact-label">Phone</div><div class="contact-value">Request access</div></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="ref">J1 · How I can help</div>
+            <h2>Good reasons to get in touch</h2>
+          </div>
+          <p>The kind of work I do most often.</p>
+        </div>
+
+        <div class="help-grid" data-stagger="110">
+          <article class="feature panel reveal">
+            <div class="ref">01</div>
+            <h3>Hardware architecture</h3>
+            <p>Battery management, motor drives and power electronics — from requirements to block diagram and power budget.</p>
+          </article>
+          <article class="feature panel reveal">
+            <div class="ref">02</div>
+            <h3>Schematic &amp; PCB reviews</h3>
+            <p>Design reviews focused on reliability, EMI/EMC, and manufacturability (DFM / DFA).</p>
+          </article>
+          <article class="feature panel reveal">
+            <div class="ref">03</div>
+            <h3>Connected &amp; low-power devices</h3>
+            <p>BLE, LTE, GNSS, NFC and sub-GHz designs, including ultra-low-power and energy-harvesting systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Phone access modal (handled by main.js → Formspree) -->
+  <div id="phoneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="phoneModalTitle">
+    <div class="modal-content">
+      <button type="button" class="modal-close" onclick="closePhoneForm()" aria-label="Close">&times;</button>
+      <h3 id="phoneModalTitle">Request phone number</h3>
+      <form id="phoneForm" onsubmit="handlePhoneRequest(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="button form-submit-btn">Send request</button>
+      </form>
+      <div id="formMessage" class="form-message"></div>
+    </div>
+  </div>
+</body>
+</html>

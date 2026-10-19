@@ -1,376 +1,298 @@
-/* ================================
-   PROJECT PAGE BASE
-   ================================ */
+/* ========================================
+   CASE-STUDY PAGES (projects/*.html)
+   Loaded AFTER site.css — only adds what case studies need.
+   Header, footer, colours, fonts and background all come from site.css / site.js.
+   ======================================== */
 
-.wrapper {
-  max-width: 760px;
+/* Same width as .container on every other page */
+.case {
+  width: min(1160px, 100% - 32px);
   margin: 0 auto;
-  padding: 32px 24px 80px;
+  padding: 40px 0 24px;
+  counter-reset: section;
 }
 
-/* ================================
-   PROJECT HEADER
-   ================================ */
-
-.project-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  z-index: 90;
+/* Two columns: content + sticky sidebar (sidebar filled by case.js) */
+.case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 28px;
+  align-items: start;
 }
 
-.project-header-top {
-  max-width: 760px;
-  margin: 0 auto;
-  height: 52px;
-  padding: 0 24px;
+.case-main { min-width: 0; }
 
+.case-aside {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  display: grid;
+  gap: 14px;
+}
+
+.aside-card { padding: 20px 22px; }
+.aside-card .ref { display: block; margin-bottom: 12px; color: var(--copper); }
+
+.aside-card dl { margin: 0; display: grid; gap: 10px; }
+.aside-card dl div { display: grid; gap: 2px; }
+.aside-card dt { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.aside-card dd { margin: 0; color: var(--text); font-size: 0.95rem; }
+
+/* "On this page" outline — a trace that fills as you read */
+.toc { position: relative; list-style: none; margin: 0; padding: 0 0 0 24px; display: grid; gap: 2px; }
+.toc::before, .toc-fill { content: ""; position: absolute; left: 5px; top: 10px; width: 2px; border-radius: 2px; }
+.toc::before { bottom: 10px; background: var(--line); }
+.toc-fill { height: calc((100% - 20px) * var(--p, 0)); background: linear-gradient(180deg, var(--copper), var(--copper-hi)); box-shadow: 0 0 8px rgba(242, 193, 78, 0.5); transition: height 0.2s; }
+
+.toc a {
+  position: relative;
+  display: block;
+  padding: 5px 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.toc a::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  margin-left: 2px;
+  border-radius: 50%;
+  border: 1.5px solid var(--copper);
+  background: var(--bg);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.lit::before { background: var(--signal); border-color: var(--signal); }
+.toc a.current { color: var(--copper-hi); }
+.toc a.current::before { box-shadow: 0 0 10px var(--signal); }
+
+/* Previous / next project */
+.case-next { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.case-next a { display: block; padding: 18px 20px; text-decoration: none; }
+.case-next a:hover { border-color: var(--copper-hi); transform: translateY(-2px); }
+.case-next .ref { display: block; margin-bottom: 6px; color: var(--copper); }
+.case-next strong { display: block; font-size: 1rem; line-height: 1.35; }
+.case-next .next { text-align: right; grid-column: 2; }
+
+@media (max-width: 1024px) {
+  .case-layout { grid-template-columns: 1fr; }
+  .case-aside { position: static; order: -1; }
+  .case-aside .toc-card { display: none; }
+}
+
+@media (max-width: 600px) {
+  .case-next { grid-template-columns: 1fr; }
+  .case-next .next { grid-column: auto; }
+}
+
+/* Top bar: back link + company links */
+.case-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.project-back {
-  font-size: 14px;
-  color: #666;
-  text-decoration: none;
-}
-
-.project-back:hover {
-  color: #111;
-}
-
-.project-links {
-  display: flex;
-  gap: 16px;
-}
-
-.project-links a {
-  font-size: 13px;
-  color: #777;
-  text-decoration: none;
-}
-
-.project-links a:hover {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/* Offset body for fixed header */
-body.has-project-header {
-  padding-top: 52px;
-}
-
-/* ================================
-   TITLE & TAGS
-   ================================ */
-
-.wrapper h1 {
-  margin: 12px 0 12px;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.project-tags {
-  display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 36px;
 }
+
+.case-bar .project-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.case-bar .project-links a,
+.project-footer a {
+  font-size: 0.86rem;
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  color: var(--copper-hi);
+  transition: border-color 0.2s, color 0.2s;
+}
+.case-bar .project-links a:hover,
+.project-footer a:hover { border-color: var(--signal); color: var(--signal); }
+
+/* ---------- Title + tags (same style as .page-hero) ---------- */
+.case > h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+
+.case > h1::before {
+  content: "U2 · Case study";
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 
 .project-tags span {
-  font-size: 12px;
-  padding: 4px 10px;
-  background: #f4f4f4;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  padding: 4px 11px;
   border-radius: 999px;
-  color: #555;
+  border: 1px solid var(--line-strong);
+  color: var(--copper-hi);
+  background: rgba(200, 162, 78, 0.06);
 }
 
-/* ================================
-   SECTIONS
-   ================================ */
-
-.project-section {
-  margin-top: 48px;
+/* ---------- Sections: each one is a panel, like the home-page cards ---------- */
+.case-main > .project-section {
+  margin: 0 0 18px;
+  padding: 28px 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--soft);
+  line-height: 1.7;
 }
 
+/* intro paragraph (first section without a heading) reads as the lead */
+.case-main > .project-section:first-of-type:not(:has(h2)) {
+  font-size: 1.06rem;
+  border-color: var(--line-strong);
+}
+
+.project-section p { margin: 0 0 14px; }
+.project-section p:last-child { margin-bottom: 0; }
+.project-section strong { color: var(--text); font-weight: 600; }
+
+/* h2 with an auto-numbered reference label — same pattern as home ".ref + h2" */
 .project-section h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
+  counter-increment: section;
+  margin: 0 0 16px;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
-/* ================================
-   IMAGE GALLERY
-   ================================ */
+.project-section h2::before {
+  content: "§" counter(section, decimal-leading-zero);
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--copper);
+}
 
+.project-section h3 { margin: 22px 0 10px; font-size: 1.08rem; font-weight: 600; }
+
+/* ---------- Images ---------- */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 14px;
+  margin: 18px 0;
 }
 
-.project-gallery img {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid #eee;
-}
-
-/* ================================
-   VIDEO
-   ================================ */
-
+.project-gallery img,
+.project-figure img,
 .project-video video {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 12px;
-  border: 1px solid #eee;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
 }
 
-/* ================================
-   FUSION EMBED
-   ================================ */
+.project-figure { width: 100%; margin: 16px 0; padding: 0; background: none; border: 0; }
+.project-figure figcaption {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------- Video & embeds ---------- */
+.project-video { margin: 16px 0; }
+
+.video-title, .viewer-title { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
 
 .fusion-embed {
   position: relative;
   width: 100%;
   padding-top: 56.25%;
-  border-radius: 14px;
+  margin: 16px 0;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-2);
 }
 
-.fusion-embed iframe {
-  position: absolute;
-  inset: 0;
+.fusion-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* 3D model viewer (holosuit page) — overrides its inline white styling */
+body model-viewer {
   width: 100%;
-  height: 100%;
-  border: 0;
+  height: 540px;
+  margin: 16px 0;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: radial-gradient(circle at 50% 40%, #1c1a16 0%, var(--bg-2) 70%);
+  --poster-color: transparent;
 }
 
-/* ================================
-   BULLETS
-   ================================ */
-
-.project-bullets {
-  padding-left: 18px;
-}
-
-.project-bullets li {
-  margin-bottom: 8px;
-}
-
-/* ================================
-   FOOTER
-   ================================ */
-
-.project-footer {
-  margin-top: 64px;
-  padding-top: 16px;
-  border-top: 1px solid #eee;
-
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
-
-.project-footer a {
-  color: #555;
-  text-decoration: none;
-}
-
-.project-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ================================
-   MOBILE
-   ================================ */
-
-@media (max-width: 768px) {
-
-  body.has-project-header {
-    padding-top: 48px;
-  }
-
-  .project-header-top {
-    height: 48px;
-    padding: 0 16px;
-  }
-
-  .wrapper {
-    padding: 24px 16px 64px;
-  }
-
-  .wrapper h1 {
-    font-size: 26px;
-    line-height: 1.25;
-  }
-
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .fusion-embed {
-    padding-top: 70%;
-  }
-}
-
-
-/* Expand button */
-.expand-toggle {
-  margin: 24px auto 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  background: none;
-  border: none;
-  color: #555;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.expand-toggle svg {
-  transition: transform 0.3s ease;
-}
-
-.expand-toggle.active svg {
-  transform: rotate(180deg);
-}
-
-/* Collapsible grid */
-#moreProjectsGrid {
-  overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.3s ease;
-}
-
-#moreProjectsGrid.collapsed {
-  max-height: 0;
-  opacity: 0;
-}
-
-#moreProjectsGrid:not(.collapsed) {
-  max-height: 2000px; /* safe large value */
-  opacity: 1;
-}
-/* Collapsed grid */
-.portfolio-grid.collapsed {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
-  transition: all 0.4s ease;
-}
-
-/* Expanded grid */
-.portfolio-grid {
-  transition: all 0.4s ease;
-}
-
-/* Expand button */
-.expand-toggle {
-  margin: 32px auto 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border: none;
-  font-size: 14px;
-  color: #555;
-  cursor: pointer;
-}
-
-.expand-toggle svg {
-  transition: transform 0.3s ease;
-}
-
-.expand-toggle.open svg {
-  transform: rotate(180deg);
-}
-
-.expand-toggle:hover {
-  color: #111;
-}
-
-
-.portfolio-toggle {
-  margin: 2rem auto 0;
-  display: block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  background: #111;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.portfolio-toggle:hover {
-  opacity: 0.85;
-}
-
-.hidden {
-  display: none;
-}
-
-.video-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-}
-
-
-.altium-3d-section {
-  margin: 3rem 0;
-}
-
-.viewer-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
+.altium-3d-section { margin: 3rem 0; }
 .altium-ecad-viewer {
   width: 100%;
-  max-width: 1280px;
   height: 600px;
-
   border-radius: 12px;
-  border: 1px solid #eee;
+  border: 1px solid var(--line-strong);
   overflow: hidden;
-
-  background: #fff;
+  background: var(--bg-2);
 }
 
-/* Mobile optimization */
+/* ---------- Bullets (same marker as the rest of the site) ---------- */
+.project-bullets { list-style: none; padding: 0; margin: 8px 0 16px; display: grid; gap: 9px; }
+.project-bullets:last-child { margin-bottom: 0; }
+.project-bullets li { position: relative; padding-left: 18px; }
+.project-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 8px;
+  height: 1.5px;
+  background: var(--copper);
+}
+
+/* ---------- Bottom navigation ---------- */
+.project-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line-strong);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Legacy helpers (older pages) ---------- */
+.hidden { display: none; }
+
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  .altium-ecad-viewer {
-    height: 360px;
-  }
+  .case { padding-top: 24px; }
+  .case-main > .project-section { padding: 22px 18px; }
+  .project-gallery { grid-template-columns: 1fr; }
+  .fusion-embed { padding-top: 70%; }
+  body model-viewer { height: 360px; }
+  .altium-ecad-viewer { height: 360px; }
 }
-
-/* UPDATED FIXED CODE */
-.project-figure {
-  width: 100%;
-  margin: 48px 0;
-}
-
-.project-figure img {
-  display: block;
-  width: 100%;       /* Forces it to fill the 760px wrapper */
-  max-width: 100%;   /* Ensures it scales down on mobile */
-  height: auto;      /* Maintains your 1291x726 aspect ratio */
-  border-radius: 12px;
-}
-
-
-.project-figure figcaption {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #666;
-    text-align: center;
-}
-
-
