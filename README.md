@@ -23,6 +23,10 @@ Each entry has `title`, `shortDescription`, `tags`, `thumbnail`, `category` (use
 buttons), `company`, `featured` (shown first, and on the home page) and `visible` (`false` hides it
 everywhere). `modal.caseStudyLink` is the page the card opens.
 
+`metrics` holds the project's key numbers, e.g. `{ value: "250 W", label: "Rated BLDC motor power" }`.
+The first 3 lead each card; the first 4 appear as a large strip under the case-study title (plain
+numbers like `250 W` or `<20 ms` count up; ranges like `36/48 V` stay static).
+
 **Add a case study** → copy `projects/template.html`, rename it, fill in the sections, then point a
 project's `modal.caseStudyLink` at it. Every `<section class="project-section">` with an `<h2>` is
 numbered automatically and added to the "On this page" outline.

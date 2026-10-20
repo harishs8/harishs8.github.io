@@ -12,7 +12,7 @@ change the website.
 | Full case-study page | `projects/<name>.html` |
 | New case study | copy `projects/template.html` |
 
-Generated: 2026-10-19 · 10 projects in data · 11 case-study pages
+Generated: 2026-10-20 · 10 projects in data · 11 case-study pages
 
 ---
 
@@ -42,6 +42,15 @@ Generated: 2026-10-19 · 10 projects in data · 11 case-study pages
 - **Thumbnail:** `/projects/Files/SmartBike/B6.jpg`
 - **Links:** [Company](https://www.emotorad.com) · [LinkedIn](https://www.linkedin.com/company/emotorad/)
 - **Page tags:** Motor Drive, NXP S32Kxx, Bluetooth Connectivity, Power Electronics, AIS-004 Compliance, Vendor Management, Cost Reduction
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 250 W | Rated BLDC motor power |
+| 500 W | Peak power for 10 s+ |
+| AIS-004 | Part-3 compliance passed |
+| BLE | Rider-app connectivity |
 
 ### Card (projects grid)
 
@@ -135,6 +144,14 @@ Ensured product compliance with Indian automotive standards and conducted rigoro
 - **Thumbnail:** `projects/Files/HoloWorld/holosuit_3_0/images/holosuitdisplay.png`
 - **Links:** [Company](https://www.holoworld.one) · [LinkedIn](https://www.linkedin.com/company/holoworld/)
 - **Page tags:** Motion Capture, VR/XR Hardware, Wearable Electronics, Sensor Integration, Haptic Feedback, Cross-Functional Leadership
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 40+ | IMU sensors across the suit |
+| <20 ms | Motion-capture latency |
+| 3× | Accuracy vs previous gen |
 
 ### Card (projects grid)
 
@@ -308,6 +325,15 @@ Gloves V1 - I2
 - **Links:** [Company](https://www.emotorad.com) · [LinkedIn](https://www.linkedin.com/company/emotorad/)
 - **Page tags:** BMS Design, Power Systems, NXP MCU, Battery Safety, AFE Integration, EMI/EMC
 
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 48 V | Two-wheeler battery pack |
+| 100 A | Continuous discharge tested |
+| NXP | AFE + MCU platform |
+| EMI/EMC | Compliant PCB layout |
+
 ### Card (projects grid)
 
 - **Title:** 48V BMS – Electric Two-Wheeler
@@ -405,6 +431,14 @@ Advanced PCB layout techniques for reliable high-current operation:
 - **Links:** [Company](https://www.emotorad.com) · [LinkedIn](https://www.linkedin.com/company/emotorad/)
 - **Page tags:** Display Systems, LTE Connectivity, GNSS, Touchscreen Interface, Location Tracking, SOS Alerts
 
+### Key numbers
+
+| Value | Label |
+|---|---|
+| LTE | With 2G fallback |
+| GNSS | Trip data & live tracking |
+| SOS | Emergency alerts |
+
 ### Card (projects grid)
 
 - **Title:** Connected Display Module – E-Bike
@@ -497,6 +531,15 @@ Designed under strict consumer-grade power constraints:
 - **Thumbnail:** `/projects/Files/Holoworld/4wrobot.jpg`
 - **Links:** [Company](https://www.holoworld.one) · [LinkedIn](https://www.linkedin.com/company/holoworldtech/)
 - **Page tags:** Robotics, Autonomous Navigation, Power Systems, Mechanical Integration, Control Electronics, Hardware Selection
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 360° | Omni-directional mobility |
+| 4+ h | Runtime at full payload |
+| 15+ | Synchronised sensors |
+| <10 cm | Navigation accuracy |
 
 ### Card (projects grid)
 
@@ -611,6 +654,14 @@ Seamless integration of perception and control systems:
 - **Links:** [Company](https://www.emotorad.com) · [LinkedIn](https://www.linkedin.com/company/emotorad/)
 - **Page tags:** Telematics, Android System, MIPI Display, Body Control Module, CAN Communication, Stackable Architecture
 
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 1080p | Display support |
+| Android | Telematics unit (Quectel) |
+| OV/UV | + reverse-polarity protection |
+
 ### Card (projects grid)
 
 - **Title:** Instrument Cluster – Body Control & Telematics
@@ -722,6 +773,15 @@ Design features enabling flexible deployment:
 - **Thumbnail:** `/projects/Files/baja_vehicle.jpg`
 - **Links:** [BAJA SAE](https://www.bajasae.net/) · [SAE International](https://www.sae.org/)
 - **Page tags:** Electrical Systems, Team Leadership, Data Acquisition, Vehicle Testing, Cost Optimization, Competition Engineering
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 35% | Weight reduction |
+| 25% | Fewer parts |
+| 21st | Overall of 100+ teams |
+| 8th | Cost event |
 
 ### Card (projects grid)
 
@@ -878,6 +938,14 @@ Team Screwtenizers' BAJA SAE vehicle demonstrated reliable performance and effec
 - **Links:** [Company](https://www.emotorad.com) · [LinkedIn](https://www.linkedin.com/company/emotorad/)
 - **Page tags:** Smart BMS, TI AFE, NXP MCU, Multi-Chemistry, Dual-Voltage, Next-Generation
 
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 36/48 V | Dual pack architecture |
+| 10S/13S | Cell configurations |
+| NMC+LFP | Supported chemistries |
+
 ### Card (projects grid)
 
 - **Title:** Intelligent BMS – 36V/48V Architecture
@@ -999,6 +1067,14 @@ This project is actively under development with focus on:
 - **Thumbnail:** `/projects/Files/Holoworld/exoskeleton.jpg`
 - **Links:** [Company](https://www.holoworld.one) · [LinkedIn](https://www.linkedin.com/company/holoworldtech/)
 - **Page tags:** Exoskeleton, Medical Hardware, Biomechanics, Motor Control, Rehabilitation Technology, Assistive Robotics
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| 0–120° | Hip & knee range of motion |
+| 40–100% | Limb-weight support |
+| 60 min | Continuous session |
 
 ### Card (projects grid)
 
@@ -1122,6 +1198,15 @@ Ergonomic design optimized for patient comfort and therapist control:
 - **Thumbnail:** `/projects/Files/holosuittt3/holosuitdisplay.png`
 - **Links:** [Company](https://www.holoworld.one) · [LinkedIn](https://www.linkedin.com/company/holoworldtech/)
 - **Page tags:** Project Management, Production Engineering, Quality Assurance, Supply Chain, Troubleshooting, Customer Delivery
+
+### Key numbers
+
+| Value | Label |
+|---|---|
+| −60% | Field failure rate |
+| 98% | Wireless uptime (from 85%) |
+| 48h→4h | Issue resolution time |
+| −15% | Manufacturing cost |
 
 ### Card (projects grid)
 

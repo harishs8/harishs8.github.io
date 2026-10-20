@@ -28,6 +28,24 @@
     }
   });
 
+  /* ---------- Key numbers strip under the title ---------- */
+  const tags = document.querySelector(".case > .project-tags");
+  if (me?.metrics?.length && tags) {
+    const animate = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const strip = document.createElement("dl");
+    strip.className = "case-metrics reveal";
+    strip.setAttribute("aria-label", "Key numbers");
+    strip.innerHTML = me.metrics.slice(0, 4).map(m => {
+      // count up plain numbers like "250 W", "<20 ms", "−60%" — leave ranges like "36/48 V" static
+      const n = /^([<>~−-]?)(\d+)(\D*)$/.exec(m.value);
+      const count = n && animate && Number(n[2]) > 0
+        ? ` data-count="${n[2]}" data-prefix="${esc(n[1])}" data-suffix="${esc(n[3])}"` : "";
+      const shown = count ? `${esc(n[1])}0${esc(n[3])}` : esc(m.value);
+      return `<div><dt>${esc(m.label)}</dt><dd${count}>${shown}</dd></div>`;
+    }).join("");
+    tags.after(strip);
+  }
+
   const facts = [["Category", me?.category], ["Company", me?.company]].filter(f => f[1]);
 
   aside.innerHTML =

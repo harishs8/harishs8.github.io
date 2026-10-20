@@ -113,26 +113,29 @@
 
   function observeAll(root = document) {
     applyStagger(root);
-    root.querySelectorAll(".reveal:not(.in), [data-count]").forEach(observe);
+    root.querySelectorAll(".reveal:not(.in), [data-count]:not([data-counted])").forEach(observe);
   }
 
   /* ---------- 5. Count-up numbers ---------- */
   function countUp(el) {
+    el.dataset.counted = "";
     const target = Number(el.dataset.count);
+    const prefix = el.dataset.prefix || "";
     const suffix = el.dataset.suffix || "";
-    if (reduceMotion || !target) { el.textContent = target + suffix; return; }
+    if (reduceMotion || !target) { el.textContent = prefix + target + suffix; return; }
     const dur = 1400;
     const t0 = performance.now();
     (function tick(now) {
       const k = Math.min(1, (now - t0) / dur);
       const eased = 1 - Math.pow(1 - k, 3);
-      el.textContent = Math.round(target * eased) + suffix;
+      el.textContent = prefix + Math.round(target * eased) + suffix;
       if (k < 1) requestAnimationFrame(tick);
     })(t0);
   }
 
   // Start counters at 0 so they visibly count (text in HTML is the final value for no-JS)
-  if (!reduceMotion) document.querySelectorAll("[data-count]").forEach(el => { el.textContent = "0" + (el.dataset.suffix || ""); });
+  const zero = el => { el.textContent = (el.dataset.prefix || "") + "0" + (el.dataset.suffix || ""); };
+  if (!reduceMotion) document.querySelectorAll("[data-count]").forEach(zero);
 
   /* ---------- 6. Scroll-linked pieces ---------- */
   const progressBar = document.querySelector(".scroll-progress");

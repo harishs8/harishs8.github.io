@@ -5,6 +5,12 @@ const portfolioProjects = [
     id: "6",
     category: "Wearables & XR",
     company: "HoloWorld",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "40+", label: "IMU sensors across the suit" },
+      { value: "<20 ms", label: "Motion-capture latency" },
+      { value: "3×", label: "Accuracy vs previous gen" }
+    ],
     featured: true,
     visible: true,
     title: "Holosuit 3.0 – Full Body Immersive Suit",
@@ -34,6 +40,13 @@ const portfolioProjects = [
     id: "E-Bike-Motor-Controller",
     category: "E-Mobility",
     company: "EMotorad",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "250 W", label: "Rated BLDC motor power" },
+      { value: "500 W", label: "Peak power for 10 s+" },
+      { value: "AIS-004", label: "Part-3 compliance passed" },
+      { value: "BLE", label: "Rider-app connectivity" }
+    ],
     title: "Smart Motor Controller – 250W E-Bike",
     featured: true,
     visible: true,
@@ -64,6 +77,12 @@ const portfolioProjects = [
     id: "2",
     category: "E-Mobility",
     company: "EMotorad",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "LTE", label: "With 2G fallback" },
+      { value: "GNSS", label: "Trip data & live tracking" },
+      { value: "SOS", label: "Emergency alerts" }
+    ],
     title: "Connected Display Module – E-Bike",
     featured: false,
     visible: true,
@@ -92,6 +111,13 @@ const portfolioProjects = [
     id: "3",
     category: "Battery Systems",
     company: "EMotorad",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "48 V", label: "Two-wheeler battery pack" },
+      { value: "100 A", label: "Continuous discharge tested" },
+      { value: "NXP", label: "AFE + MCU platform" },
+      { value: "EMI/EMC", label: "Compliant PCB layout" }
+    ],
     title: "48V BMS – Electric Two-Wheeler",
     featured: false,
     visible: true,
@@ -120,6 +146,12 @@ const portfolioProjects = [
     id: "4",
     category: "E-Mobility",
     company: "EMotorad",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "1080p", label: "Display support" },
+      { value: "Android", label: "Telematics unit (Quectel)" },
+      { value: "OV/UV", label: "+ reverse-polarity protection" }
+    ],
     title: "Instrument Cluster – Body Control & Telematics",
     featured: false,
     visible: false,
@@ -148,6 +180,12 @@ const portfolioProjects = [
     id: "5",
     category: "Battery Systems",
     company: "EMotorad",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "36/48 V", label: "Dual pack architecture" },
+      { value: "10S/13S", label: "Cell configurations" },
+      { value: "NMC+LFP", label: "Supported chemistries" }
+    ],
     title: "Intelligent BMS – 36V/48V Architecture",
     featured: false,
     visible: false,
@@ -204,6 +242,13 @@ const portfolioProjects = [
     id: "7",
     category: "Robotics",
     company: "HoloWorld",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "360°", label: "Omni-directional mobility" },
+      { value: "4+ h", label: "Runtime at full payload" },
+      { value: "15+", label: "Synchronised sensors" },
+      { value: "<10 cm", label: "Navigation accuracy" }
+    ],
     title: "4-Wheeled Omni-Directional Research Robot",
     featured: false,
     visible: true,
@@ -232,6 +277,12 @@ const portfolioProjects = [
     id: "8",
     category: "Robotics",
     company: "HoloWorld",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "0–120°", label: "Hip & knee range of motion" },
+      { value: "40–100%", label: "Limb-weight support" },
+      { value: "60 min", label: "Continuous session" }
+    ],
     title: "Lower-Body Exoskeleton – Rehabilitation System",
     featured: false,
     visible: false,
@@ -260,6 +311,13 @@ const portfolioProjects = [
     id: "9",
     category: "Wearables & XR",
     company: "HoloWorld",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "−60%", label: "Field failure rate" },
+      { value: "98%", label: "Wireless uptime (from 85%)" },
+      { value: "48h→4h", label: "Issue resolution time" },
+      { value: "−15%", label: "Manufacturing cost" }
+    ],
     title: "Holosuit 1.7 – Project Management & Production",
     featured: false,
     visible: false,
@@ -288,6 +346,13 @@ const portfolioProjects = [
     id: "10",
     category: "Automotive",
     company: "SAEGCT",
+    // Key numbers — shown first on the card and at the top of the case study
+    metrics: [
+      { value: "35%", label: "Weight reduction" },
+      { value: "25%", label: "Fewer parts" },
+      { value: "21st", label: "Overall of 100+ teams" },
+      { value: "8th", label: "Cost event" }
+    ],
     title: "BAJA SAE – All Terrain Vehicle | Electrical Lead",
     featured: false,
     visible: false,

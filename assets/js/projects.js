@@ -36,6 +36,10 @@
       <div class="project-body">
         <div class="project-meta">${esc(p.category || "")}${p.company ? " · " + esc(p.company) : ""}</div>
         <h3>${esc(p.title)}</h3>
+        ${p.metrics?.length ? `
+        <dl class="card-metrics">
+          ${p.metrics.slice(0, 3).map(m => `<div><dt>${esc(m.label)}</dt><dd>${esc(m.value)}</dd></div>`).join("")}
+        </dl>` : ""}
         <p>${esc(p.shortDescription)}</p>
         <div class="tags">${(p.tags || []).slice(0, 4).map(t => `<span>${esc(t)}</span>`).join("")}</div>
         <span class="project-cta">Read case study</span>
